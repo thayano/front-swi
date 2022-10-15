@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Owl Sensor</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.1/tailwind.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+  <header class="pad">
+    <div class="columns">
+      <div class="column is-12">
+        <div class="card">
+          <nav class="navbar is-transparent " role="navigation" aria-label="main navigation">
+            <div class="navbar-brand center-menu start-menu">
+              <div class="ml-5"> <img style="width: 150px;" src="./img/logo-azul-escuro.png"></div>
+            </div>
+            <div id="navbarBasicExample" class="navbar-menu">
+              <div class="navbar-end margem-direita">
+                <div class="navbar-end ">
+                  <a  class="navbar-item" style="">Mapa</a>
+                  <a class="navbar-item" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop2">Relatórios</a>
+                  <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                      Administrativo
+                    </a>
+                    <div class="navbar-dropdown">
+                      <a href="#" class="navbar-item">
+                        Gerenciar Usuarios
+                      </a>
+                      <hr class="navbar-divider">
+                      <a href="#" class="navbar-item">
+                        Gerenciar Empresas
+                      </a>
+                      <hr class="navbar-divider">
+                      <a href="#" class="navbar-item">
+                        Cadastrar Usuarios
+                      </a>
+                      <hr class="navbar-divider">
+                      <a href="#" class="navbar-item">
+                        Cadastro de Empresa
+                      </a>
+                      <hr class="navbar-divider">
+                      <a href="#" class="navbar-item">
+                        Cadastro de Companhias
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <a onclick="Logout()" class="button is-info">
+                  <div class="icon">
+                    <img src="./img/logout.png">
+                  </div>
+                  <span>
+                    <strong style="color:white;">Sair</strong>
+                  </span>
+                </a>
+
+              </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+    </div>
+  </header>
+  <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title text-black" id="staticBackdropLabel"> <strong>Relatórios</strong></h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row justify-content-md-center">
+            <div class="data-div">
+              <label class="" for="diaa">Selecione o Relatório: </label>
+              <select style="margin-left: 4rem;" id="selectRelatorio"></select>
+            </div>
+            <br>
+            <div class="data-div">
+              <label class="" for="diaa">Selecione o Periodo: </label>
+              <br>
+              <br>
+              <div class="navbar-start">
+                <form>
+                  <label class="" for="diaa">Inicio: </label>
+                  <input autocomplete="off" autocorrect="off" onchange="desenhaGraficos()" id="periodoInicial"
+                    spellcheck="false" type="date" aria-label="data" maxlength="23" placeholder="Selecione um período"
+                    style="height: 40px; font-size: 14px; ">
+                  <label class="label-data1" for="diaa">Fim: </label>
+                  <strong>
+                    <input autocomplete="off" onchange="desenhaGraficos()" id="periodoFinal" autocorrect="off"
+                      spellcheck="false" type="date" aria-label="data" maxlength="23" placeholder="Selecione um período"
+                      style="height: 40px; font-size: 14px;">
+                  </strong>
+                  <hr>
+                  <div id="medicoes" style=""></div>
+                  <script>
+                    let htmlMedicoes =
+                      `<div style="display: inline-block; padding: 10px;">
+                        <p><input type="checkbox" id="tensao" value="on"> Chave Aberta</p>
+                        <p><input type="checkbox" id="corrente" value="on"> Falta de Comunicação</p>
+                        <p><input type="checkbox" id="fp" value="on"> Chave em Manipulação</p>
+                        <p><input type="checkbox" id="bateria" value="on"> Bateria</p>
+                      </div>`;
+
+                    let htmlAlert =
+                      `<div style="display: inline-block; padding: 10px;">
+                        <p><input type="checkbox" id="tensao" value="on"> Falta de Fase</p>
+                        <p><input type="checkbox" id="corrente" value="on"> Falta de Corrente</p>
+                        <p><input type="checkbox" id="fp" value="on"> Curto Transitório</p>
+                        <p><input type="checkbox" id="bateria" value="on"> Bateria</p>
+                      </div>
+                      <div style="display: inline-block;">
+                        <p><input type="checkbox" id="e_ativa" value="on"> Curto Permanente</p>
+                        <p><input type="checkbox" id="e_reativa" value="on"> Falta de Comunicação</p>
+                        <p><input type="checkbox" id="e_total" value="on"> Direção da Corrente</p>
+                        <p><input type="checkbox" id="e_total" value="on"> Oscilação de Tensão</p>
+                      </div>`;
+
+                    document.getElementById('periodoInicial').valueAsDate = new Date();
+                    document.getElementById('periodoFinal').valueAsDate = new Date();
+                    var select = document.getElementById("selectRelatorio");
+                    var lista = [];
+
+                    function start() {
+                      var opt0 = document.createElement("option");
+                      opt0.value = "0";
+                      opt0.text = "Selecione";
+                      select.add(opt0, select.options[0]);
+
+                      var opt2 = document.createElement("option");
+                      opt2.value = "3";
+                      opt2.text = "Relatórios de Alertas";
+                      select.add(opt2, select.options[2]);
+                      var value = select.options[select.selectedIndex].value;
+                    };
+                    start();
+                    select.addEventListener("change", selectPeriod);
+
+                    function selectPeriod() {
+                      let medicoes = document.getElementById('medicoes')
+                      if (select.selectedIndex == 1) {
+                        medicoes.innerHTML = htmlMedicoes
+                      }
+                      if (select.selectedIndex == 2) {
+                        medicoes.innerHTML = htmlAlert
+                      }
+                    }
+
+                    async function getHistorico() {
+                      var pacote = document.getElementsByName('Pacote');
+                      let periodoInicial = document.getElementById('periodoInicial').value;
+                      let periodoFinal = document.getElementById('periodoFinal').value;
+                      let periodoFinalF = new Date(periodoFinal);
+                      let periodoInicialF = new Date(periodoInicial);
+                      var localtoken = JSON.parse(sessionStorage.getItem("dadosLogin"));
+
+                      $.ajax({
+                        type: "GET",
+                        beforeSend: function (requisicao) {
+                          requisicao.setRequestHeader("Authorization", "Token 7a361bd9ccf5f7b88433dcdb5d36531363c40778");
+                          requisicao.setRequestHeader("Content-Type", "application/json");
+                        },
+                        url: "http://192.168.21.82:7000/mongo/return_measurements_by_date/?serial=10&last_date=2022-09-26 23:59:00&inital_date=2022-09-23 00:00:00",
+                        success: function (data) {
+                          for (var i = 0; i < data.length; i++) {
+                            lista.push({ 'Corrente Med: ': data[i]["COR_ELE_RSM_MED"], 'Tensão Med: ': data[i]["TEN_ELE_RSM_MED"], 'Data': data[i]["DATE_SENSOR"] });
+                          }
+                          _gerarCsv()
+                        },
+                      });
+                    }
+                    function _gerarCsv() {
+                      filename = 'reports.xlsx';
+                      var ws = XLSX.utils.json_to_sheet(lista);
+                      var wb = XLSX.utils.book_new();
+                      XLSX.utils.book_append_sheet(wb, ws, "People");
+                      XLSX.writeFile(wb, filename);
+                      lista = []
+                    }
+                  </script>
+                  <br>
+                </form>
+              </div>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-secondary"
+                onclick="getHistorico()">Baixar</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script>
+    var map;
+    function initMap() {
+      let brasil = {
+        lat: -15,
+        lng: -53
+      };
+      map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 4,
+        center: brasil,
+        // autocloseinfo: false,
+        // streetViewControl: false,
+        // mapTypeControl: false,
+        // fullscreenControl: false,
+        disableDefaultUI: false
+      });
+      var data_layer = new google.maps.Data({
+        map: map
+      });
+      var data_layer_2 = new google.maps.Data({
+        map: map
+      });
+      data_layer.loadGeoJson(
+        'convert2.json');
+      data_layer_2.loadGeoJson(
+        'convert7.json');
+    }
+
+    window.initMap = initMap;
+  </script> 
+  <div style=" padding: 0;" class="columns tamanho">
+  <section style="width: 20rem; margin-right: -0.9rem;">
+    <div class="column">
+      <div class="field">
+        <div class="card-content">
+          <div class="content">
+            <div class="control has-icons-left has-icons-right">
+              <input class="input" type="text" placeholder="">
+              <span class="icon is-small is-left">
+                <i class="fa fa-search"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fa fa-check"></i>
+              </span>
+            </div>
+            <br>
+            Estruturas
+            <br>
+            <p style="text-align: left;">
+              Homologação
+            </p>
+          </div>
+        </div>
+        <br>
+        <hr>
+        <div class="control has-text-centered">
+          <button type="submit" class="button is-light" style="background-color: #3273dc; color: white;">Centralizar</button>
+        </div>
+      </div>
+  </section>
+  <div id="map" class="column is-9 has-text-centered" style="height: 57.8rem; border:0px; width: 96rem;"></div>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+
+  <div class="d-flex flex-column flex-shrink-0 bg-secondary.bg-gradient" style="width: 4.5rem;">
+    <a class="d-block p-3 link-dark text-decoration-none ml-1" data-toggle="tooltip" title="Notificações"
+      data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="border-bottom: 1px solid black;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 ml-2">
+        <path
+          d="M5.85 3.5a.75.75 0 00-1.117-1 9.719 9.719 0 00-2.348 4.876.75.75 0 001.479.248A8.219 8.219 0 015.85 3.5zM19.267 2.5a.75.75 0 10-1.118 1 8.22 8.22 0 011.987 4.124.75.75 0 001.48-.248A9.72 9.72 0 0019.266 2.5z" />
+        <path fill-rule="evenodd"
+          d="M12 2.25A6.75 6.75 0 005.25 9v.75a8.217 8.217 0 01-2.119 5.52.75.75 0 00.298 1.206c1.544.57 3.16.99 4.831 1.243a3.75 3.75 0 107.48 0 24.583 24.583 0 004.83-1.244.75.75 0 00.298-1.205 8.217 8.217 0 01-2.118-5.52V9A6.75 6.75 0 0012 2.25zM9.75 18c0-.034 0-.067.002-.1a25.05 25.05 0 004.496 0l.002.1a2.25 2.25 0 11-4.5 0z"
+          clip-rule="evenodd" />
+      </svg>
+
+    </a>
+    <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+      <!-- <li data-toggle="tooltip" title="Oscilação de Tensão">
+        <a href="#" class="d-block p-3 link-dark text-decoration-none ml-3" title="" data-bs-toggle="tooltip">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path fill-rule="evenodd"
+              d="M12 5.25c1.213 0 2.415.046 3.605.135a3.256 3.256 0 013.01 3.01c.044.583.077 1.17.1 1.759L17.03 8.47a.75.75 0 10-1.06 1.06l3 3a.75.75 0 001.06 0l3-3a.75.75 0 00-1.06-1.06l-1.752 1.751c-.023-.65-.06-1.296-.108-1.939a4.756 4.756 0 00-4.392-4.392 49.422 49.422 0 00-7.436 0A4.756 4.756 0 003.89 8.282c-.017.224-.033.447-.046.672a.75.75 0 101.497.092c.013-.217.028-.434.044-.651a3.256 3.256 0 013.01-3.01c1.19-.09 2.392-.135 3.605-.135zm-6.97 6.22a.75.75 0 00-1.06 0l-3 3a.75.75 0 101.06 1.06l1.752-1.751c.023.65.06 1.296.108 1.939a4.756 4.756 0 004.392 4.392 49.413 49.413 0 007.436 0 4.756 4.756 0 004.392-4.392c.017-.223.032-.447.046-.672a.75.75 0 00-1.497-.092c-.013.217-.028.434-.044.651a3.256 3.256 0 01-3.01 3.01 47.953 47.953 0 01-7.21 0 3.256 3.256 0 01-3.01-3.01 47.759 47.759 0 01-.1-1.759L6.97 15.53a.75.75 0 001.06-1.06l-3-3z"
+              clip-rule="evenodd" />
+          </svg>
+        </a>
+      </li> -->
+      <li data-toggle="tooltip" title="Chave Aberta">
+        <a id="chaveSidebar" href="#" class="d-block p-3 link-dark text-decoration-none ml-3 mb-4" title="" data-bs-toggle="tooltip"
+          data-bs-placement="right" data-bs-original-title="Products">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="alarme_chave">
+            <path
+              d="M63.8 409.3l60.5-59c32.1 42.8 71.1 66 126.6 67.4 30.5.7 60.3-7 86.4-22.4 5.1 5.3 18.5 19.5 20.9 22-32.2 20.7-69.6 31.1-108.1 30.2-43.3-1.1-84.6-16.7-117.7-44.4.3-.6-38.2 37.5-38.6 37.9 9.5 29.8-13.1 62.4-46.3 62.4C20.7 503.3 0 481.7 0 454.9c0-34.3 33.1-56.6 63.8-45.6zm354.9-252.4c19.1 31.3 29.6 67.4 28.7 104-1.1 44.8-19 87.5-48.6 121 .3.3 23.8 25.2 24.1 25.5 9.6-1.3 19.2 2 25.9 9.1 11.3 12 10.9 30.9-1.1 42.4-12 11.3-30.9 10.9-42.4-1.1-6.7-7-9.4-16.8-7.6-26.3-24.9-26.6-44.4-47.2-44.4-47.2 42.7-34.1 63.3-79.6 64.4-124.2.7-28.9-7.2-57.2-21.1-82.2l22.1-21zM104 53.1c6.7 7 9.4 16.8 7.6 26.3l45.9 48.1c-4.7 3.8-13.3 10.4-22.8 21.3-25.4 28.5-39.6 64.8-40.7 102.9-.7 28.9 6.1 57.2 20 82.4l-22 21.5C72.7 324 63.1 287.9 64.2 250.9c1-44.6 18.3-87.6 47.5-121.1l-25.3-26.4c-9.6 1.3-19.2-2-25.9-9.1-11.3-12-10.9-30.9 1.1-42.4C73.5 40.7 92.2 41 104 53.1zM464.9 8c26 0 47.1 22.4 47.1 48.3S490.9 104 464.9 104c-6.3.1-14-1.1-15.9-1.8l-62.9 59.7c-32.7-43.6-76.7-65.9-126.9-67.2-30.5-.7-60.3 6.8-86.2 22.4l-21.1-22C184.1 74.3 221.5 64 260 64.9c43.3 1.1 84.6 16.7 117.7 44.6l41.1-38.6c-1.5-4.7-2.2-9.6-2.2-14.5C416.5 29.7 438.9 8 464.9 8zM256.7 113.4c5.5 0 10.9.4 16.4 1.1 78.1 9.8 133.4 81.1 123.8 159.1-9.8 78.1-81.1 133.4-159.1 123.8-78.1-9.8-133.4-81.1-123.8-159.2 9.3-72.4 70.1-124.6 142.7-124.8zm-59 119.4c.6 22.7 12.2 41.8 32.4 52.2l-11 51.7h73.7l-11-51.7c20.1-10.9 32.1-29 32.4-52.2-.4-32.8-25.8-57.5-58.3-58.3-32.1.8-57.3 24.8-58.2 58.3zM256 160" />
+          </svg>
+        </a>
+      </li>
+      <!-- <li data-toggle="tooltip" title="Falta de Fase">
+        <a id="chaveSidebar" href="#" class="d-block p-3 link-dark text-decoration-none ml-3">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" id="alarme_fase" class="w-6 h-6">
+            <path fill-rule="evenodd"
+              d="M1.72 5.47a.75.75 0 011.06 0L9 11.69l3.756-3.756a.75.75 0 01.985-.066 12.698 12.698 0 014.575 6.832l.308 1.149 2.277-3.943a.75.75 0 111.299.75l-3.182 5.51a.75.75 0 01-1.025.275l-5.511-3.181a.75.75 0 01.75-1.3l3.943 2.277-.308-1.149a11.194 11.194 0 00-3.528-5.617l-3.809 3.81a.75.75 0 01-1.06 0L1.72 6.53a.75.75 0 010-1.061z"
+              clip-rule="evenodd" />
+          </svg>
+        </a>
+      </li> -->
+      <li data-toggle="tooltip" title="Chave em Manipulação">
+        <a id="transitorioSidebar" href="#" class="d-block p-3 link-dark text-decoration-none ml-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-tools"
+            viewBox="0 0 16 16">
+            <path
+              d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708ZM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11Z" />
+          </svg>
+        </a>
+      </li>
+      <li data-toggle="tooltip" title="Falta de Comunicação">
+        <a id="comunicacaoSidebar" href="#" class="d-block p-3 link-dark text-decoration-none ml-3" title=""
+          data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Products">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" fill="currentColor" class="w-6 h-6">
+            <path
+              d="M3.53 2.47a.75.75 0 00-1.06 1.06l18 18a.75.75 0 101.06-1.06l-18-18zM20.25 5.507v11.561L5.853 2.671c.15-.043.306-.075.467-.094a49.255 49.255 0 0111.36 0c1.497.174 2.57 1.46 2.57 2.93zM3.75 21V6.932l14.063 14.063L12 18.088l-7.165 3.583A.75.75 0 013.75 21z" />
+          </svg>
+        </a>
+      </li>
+      <li data-toggle="tooltip" title="Bateria">
+        <a id="bateriaSidebar" class="d-block p-3 link-dark text-decoration-none ml-3" aria-controls="Bateria">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" id="alarme_bateria" class="w-6 h-6">
+            <path
+              d="M4.5 9.75a.75.75 0 00-.75.75V15c0 .414.336.75.75.75h6.75A.75.75 0 0012 15v-4.5a.75.75 0 00-.75-.75H4.5z" />
+            <path fill-rule="evenodd"
+              d="M3.75 6.75a3 3 0 00-3 3v6a3 3 0 003 3h15a3 3 0 003-3v-.037c.856-.174 1.5-.93 1.5-1.838v-2.25c0-.907-.644-1.664-1.5-1.837V9.75a3 3 0 00-3-3h-15zm15 1.5a1.5 1.5 0 011.5 1.5v6a1.5 1.5 0 01-1.5 1.5h-15a1.5 1.5 0 01-1.5-1.5v-6a1.5 1.5 0 011.5-1.5h15z"
+              clip-rule="evenodd" />
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="offcanvas offcanvas-end text-bg-light.bg-gradient" tabindex="-1" id="Bateria" aria-labelledby="BateriaLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title text-dark" id="BateriaLabel" style="display: flex;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" id="alarme_bateria" fill="red" class="w-6 h-6"
+          style="margin-right:10px;">
+          <path
+            d="M4.5 9.75a.75.75 0 00-.75.75V15c0 .414.336.75.75.75h6.75A.75.75 0 0012 15v-4.5a.75.75 0 00-.75-.75H4.5z" />
+          <path fill-rule="evenodd"
+            d="M3.75 6.75a3 3 0 00-3 3v6a3 3 0 003 3h15a3 3 0 003-3v-.037c.856-.174 1.5-.93 1.5-1.838v-2.25c0-.907-.644-1.664-1.5-1.837V9.75a3 3 0 00-3-3h-15zm15 1.5a1.5 1.5 0 011.5 1.5v6a1.5 1.5 0 01-1.5 1.5h-15a1.5 1.5 0 01-1.5-1.5v-6a1.5 1.5 0 011.5-1.5h15z"
+            clip-rule="evenodd" />
+        </svg>
+        Bateria
+      </h5>
+      <script>
+        $(document).ready(function () {
+          $('[data-toggle="tooltip"]').tooltip();
+        });
+      </script>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <style>
+      .example::-webkit-scrollbar {
+        display: none;
+      }
+      .example {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+    <div class="offcanvas-body example" id="bateriaSideBar"></div>
+  </div>
+  <div class="offcanvas offcanvas-end text-bg-light.bg-gradient" tabindex="-1" id="Fase" aria-labelledby="FaseLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title text-dark ml-2" id="FaseLabel" style="display: flex;">Chave Aberta </h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body example" id="chaveSideBar"></div>
+  </div>
+  <div class="offcanvas offcanvas-end text-bg-light.bg-gradient" tabindex="-1" id="Corrente"
+    aria-labelledby="CorrenteLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title text-dark" id="CorrenteLabel" style="display: flex;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="alarme_corrente" fill="red" class="w-6 h-6"
+          style="margin-right:10px;">
+          <path
+            d="M4.5 9.75a.75.75 0 00-.75.75V15c0 .414.336.75.75.75h6.75A.75.75 0 0012 15v-4.5a.75.75 0 00-.75-.75H4.5z" />
+          <path fill-rule="evenodd"
+            d="M3.75 6.75a3 3 0 00-3 3v6a3 3 0 003 3h15a3 3 0 003-3v-.037c.856-.174 1.5-.93 1.5-1.838v-2.25c0-.907-.644-1.664-1.5-1.837V9.75a3 3 0 00-3-3h-15zm15 1.5a1.5 1.5 0 011.5 1.5v6a1.5 1.5 0 01-1.5 1.5h-15a1.5 1.5 0 01-1.5-1.5v-6a1.5 1.5 0 011.5-1.5h15z"
+            clip-rule="evenodd" />
+        </svg>
+        Chave em Manipulação
+      </h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body example" id="maniSideBar"></div>
+  </div>
+  <!-- <div class="offcanvas offcanvas-end text-bg-light.bg-gradient" tabindex="-1" id="Permanente"
+    aria-labelledby="PermanenteLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title text-dark" id="PermanenteLabel" style="display: flex;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="alarme_permanente" fill="red" class="w-6 h-6"
+          style="margin-right:10px;">
+          <path
+            d="M4.5 9.75a.75.75 0 00-.75.75V15c0 .414.336.75.75.75h6.75A.75.75 0 0012 15v-4.5a.75.75 0 00-.75-.75H4.5z" />
+          <path fill-rule="evenodd"
+            d="M3.75 6.75a3 3 0 00-3 3v6a3 3 0 003 3h15a3 3 0 003-3v-.037c.856-.174 1.5-.93 1.5-1.838v-2.25c0-.907-.644-1.664-1.5-1.837V9.75a3 3 0 00-3-3h-15zm15 1.5a1.5 1.5 0 011.5 1.5v6a1.5 1.5 0 01-1.5 1.5h-15a1.5 1.5 0 01-1.5-1.5v-6a1.5 1.5 0 011.5-1.5h15z"
+            clip-rule="evenodd" />
+        </svg>
+        Curto Permanente
+      </h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body example" id="permanenteSideBar"></div>
+  </div> -->
+  <!-- <div class="offcanvas offcanvas-end text-bg-light.bg-gradient" tabindex="-1" id="Transitorio"
+    aria-labelledby="TransitorioLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title text-dark" id="TransitorioLabel" style="display: flex;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="alarme_transitorio" fill="red" class="w-6 h-6"
+          style="margin-right:10px;">
+          <path
+            d="M4.5 9.75a.75.75 0 00-.75.75V15c0 .414.336.75.75.75h6.75A.75.75 0 0012 15v-4.5a.75.75 0 00-.75-.75H4.5z" />
+          <path fill-rule="evenodd"
+            d="M3.75 6.75a3 3 0 00-3 3v6a3 3 0 003 3h15a3 3 0 003-3v-.037c.856-.174 1.5-.93 1.5-1.838v-2.25c0-.907-.644-1.664-1.5-1.837V9.75a3 3 0 00-3-3h-15zm15 1.5a1.5 1.5 0 011.5 1.5v6a1.5 1.5 0 01-1.5 1.5h-15a1.5 1.5 0 01-1.5-1.5v-6a1.5 1.5 0 011.5-1.5h15z"
+            clip-rule="evenodd" />
+        </svg>
+        Curto Transitório
+      </h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body example" id="transitorioSideBar"></div>
+  </div> -->
+</div>
+<script src="https://kit.fontawesome.com/b2b07e6299.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTCFKDaDJbda8Pq8tlKbD_C_xED88oMg8&callback=initMap"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.1/xlsx.full.min.js"></script>
+  <script>
+    alarmesLateral()
+    let usuarioLogado = JSON.parse(sessionStorage.getItem('usuarioLogado'));
+
+    let name_user = document.getElementById("name_user").innerHTML = `Olá, ${usuarioLogado.user.first_name}!`
+
+    if (!usuarioLogado) {
+      window.location = "/login"
+    }
+    function Logout() {
+      sessionStorage.removeItem('usuarioLogado');
+      window.location = "/login"
+      location.reload()
+    }
+    async function alarmesLateral() {
+	
+
+	let response = await fetch('http://179.124.9.84:7200/mongo/return_all_alerts/', {
+
+		method: 'GET',
+		headers: {
+			Authorization: "token b373e7d405e1772cc549aa5d46ef1062ff8f4579",
+			Accept: 'application/json',
+			'Content-Type': 'application/json'
+		}
+	})
+
+	let json = await response.json()
+	console.log(json)
+
+	for (let x of json) {
+	
+		if (x['BAT_BAIXA'] == 1) {
+			let alarmeBateria = document.getElementById("alarme_bateria");
+			let bateriaSidebar = document.getElementById("bateriaSidebar");
+			let date = moment(x['DATE_SENSOR']).format("DD/MM/yyyy")
+			let hora = moment(x['DATE_SENSOR']).format("HH:mm")
+			alarmeBateria.setAttribute("fill", "red");
+			bateriaSidebar.setAttribute("data-bs-toggle", "offcanvas");
+			bateriaSidebar.setAttribute("data-bs-target", "#Bateria");
+			$("#bateriaSideBar").append(`
+			<ul class="list-group mb-4">
+				<li class="list-group-item text-dark bg-ligth rounded-3" style="background-color:#f8f9fa;border: none;">
+				<strong>Sensor: ${x['SERIAL']}</strong>
+					<p class="mt-2">
+						Data: ${date}<br>
+						Hora: ${hora}
+					</p>
+				</li>
+			</ul>`);
+		}
+		if (x['CHV_ABERTA'] == 1) {			
+			let alarmeChave= document.getElementById("alarme_chave");
+			let chaveSidebar = document.getElementById("chaveSidebar");
+			let date = moment(x['DATE_SENSOR']).format("DD/MM/yyyy")
+			let hora = moment(x['DATE_SENSOR']).format("HH:mm")
+			alarmeChave.setAttribute("fill", "red");
+			chaveSidebar.setAttribute("data-bs-toggle", "offcanvas");
+			chaveSidebar.setAttribute("data-bs-target", "#Fase");
+			$("#chaveSideBar").append(`
+			<ul class="list-group mb-4">
+				<li class="list-group-item text-dark bg-ligth rounded-3" style="background-color:#f8f9fa;border: none;">
+				<strong>Sensor: ${x['SERIAL']}</strong>
+					<p class="mt-2">
+						Data: ${date}<br>
+						Hora: ${hora}
+					</p>
+				</li>
+			</ul>`);
+
+		}
+		if (x['CHV_MANIPULADA'] == 1) {		
+			let maniCorrente= document.getElementById("mani");
+			let maniSidebar = document.getElementById("maniSidebar");
+			let date = moment(x['DATE_SENSOR']).format("DD/MM/yyyy")
+			let hora = moment(x['DATE_SENSOR']).format("HH:mm")
+			maniCorrente.setAttribute("fill", "red");
+			maniSidebar.setAttribute("data-bs-toggle", "offcanvas");
+			maniSidebar.setAttribute("data-bs-target", "#Corrente");
+			$("#maniSideBar").append(`
+			<ul class="list-group mb-4">
+				<li class="list-group-item text-dark bg-ligth rounded-3" style="background-color:#f8f9fa;border: none;">
+				<strong>Sensor: ${x['SERIAL']}</strong>
+					<p class="mt-2">
+						Data: ${date}<br>
+						Hora: ${hora}
+					</p>
+				</li>
+			</ul>`);
+		}
+		if (x['NVL_AFUDAMENTO_TEN'] == 1) {			
+			let alarmeTransitorio= document.getElementById("alarme_transitorio");
+			let transitorioSidebar = document.getElementById("transitorioSidebar");
+			let date = moment(x['DATE_SENSOR']).format("DD/MM/yyyy")
+			let hora = moment(x['DATE_SENSOR']).format("HH:mm")
+			alarmeTransitorio.setAttribute("fill", "red");
+			transitorioSidebar.setAttribute("data-bs-toggle", "offcanvas");
+			transitorioSidebar.setAttribute("data-bs-target", "#Transitorio");
+			$("#transitorioSideBar").append(`
+			<ul class="list-group mb-4">
+				<li class="list-group-item text-dark bg-ligth rounded-3" style="background-color:#f8f9fa;border: none;">
+				<strong>Sensor: ${x['SERIAL']}</strong>
+					<p class="mt-2">
+						Data: ${date}<br>
+						Hora: ${hora}
+					</p>
+				</li>
+			</ul>`);
+		}
+		// if (x['FALTA_FASE'] == 1 && x['FALTA_CORRENTE'] == 1) {			
+		// 	let alarmePermanente= document.getElementById("alarme_permanente");
+		// 	let permanenteSidebar = document.getElementById("permanenteSidebar");
+		// 	let date = moment(x['DATE_SENSOR']).format("DD/MM/yyyy")
+		// 	let hora = moment(x['DATE_SENSOR']).format("HH:mm")
+		// 	alarmePermanente.setAttribute("fill", "red");
+		// 	permanenteSidebar.setAttribute("data-bs-toggle", "offcanvas");
+		// 	permanenteSidebar.setAttribute("data-bs-target", "#Permanente");
+		// 	$("#permanenteSideBar").append(`
+		// 	<ul class="list-group mb-4">
+		// 		<li class="list-group-item text-dark bg-ligth rounded-3" style="background-color:#f8f9fa;border: none;">
+		// 		<strong>Sensor: ${x['SERIAL']}</strong>
+		// 			<p class="mt-2">
+		// 				Data: ${date}<br>
+		// 				Hora: ${hora}
+		// 			</p>
+		// 		</li>
+		// 	</ul>`);
+		// }
+		
+	}
+}
+  </script>
+
+</body>
+
+</html>
