@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Responsive &amp; Dashboard Template ">
+    <meta name="keywords"
+        content="bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, front-end">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
+    <title>Perfil | Smart OWl</title>
+    <link href="css/app.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<style>
+    .sidenav {
+        border-radius: 15px;
+    }
+
+    input {
+        width: 100%;
+        padding: 6px 10px;
+        box-sizing: border-box;
+        border: 0px solid #ccc;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        outline: none;
+    }
+
+    input:focus {
+        border: 0;
+    }
+
+    .erro{
+    color:#d62828;
+
+  }
+  .erroInput{
+    background-color:#fde6e6;
+  }
+</style>
+<body>
+    <div class="wrapper">
+        <div class="main">
+            <nav class="navbar navbar-expand navbar-light navbar-bg">
+                <div class="container-fluid" style="margin-left: auto; ">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                            <li class="nav-item mt-1">
+                                <div class="d-flex flex-row">
+                                    <img src="./logo_azul.png" class="ms-5" height="30px">
+                                </div>
+                            </li>
+                            <li class="nav-item ms-6">
+                                <a class="nav-link" href="#">Relatórios</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">Dropdown</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="navbar-nav navbar-align">
+                        <li class="nav-item dropdown">
+                            <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#"
+                                data-bs-toggle="dropdown">
+                                <i class="align-middle" data-feather="settings"></i>
+                            </a>
+                            <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#"
+                                data-bs-toggle="dropdown">
+                                <i class="align-middle me-2" data-feather="user"></i>
+                                <span class="text-dark">Usuario</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a class="dropdown-item" href="account.html"><i class="align-middle me-1"
+                                        data-feather="user"></i> Perfil</a>
+                                <a class="dropdown-item" href="#"><i class="align-middle me-1"
+                                        data-feather="pie-chart"></i> Relatórios</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Sair</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main class="content p-3 d-flex justify-content-center" style="background-color: #dfe9f0;">
+                <div class="app-wrapper sidenav">
+                    <div class="app-content pt-3 p-md-3 p-lg-4">
+                        <div class="container-xl">
+                            <h1 class="app-page-title mb-3">Minha Conta</h1>
+                            <div class="row gy-4">
+                                <div class="col-12 col-lg-12">
+                                    <div class="app-card app-card-account d-flex flex-column align-items-start"  style="background-color: white; border-radius: 15px;">
+                                        <div class="app-card-header p-3 border-bottom-0">
+                                            <div class="row align-items-center gx-3">
+                                                <div class="col-auto">
+                                                    <div class="app-icon-holder">
+                                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person" fill="currentColor"xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd" d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <!--//col-->
+                                                <div class="col-auto">
+                                                    <h4 class="app-card-title">Perfil</h4>
+                                                </div>
+                                                <!--//col-->
+                                            </div>
+                                            <!--//row-->
+                                        </div>
+                                        <!--//app-card-header-->
+                                        <div class="app-card-body px-4 w-100 pb-4">
+                                            <div class="item border-bottom py-3">
+                                                <div class="row justify-content-between align-items-center">
+                                                    <div class="col">
+                                                        <div class="item-label"> <strong id="erroNome">Nome </strong></div>
+                                                        <input type="text" class="mt-2" id="nome" value="" disabled>
+                                                    </div>
+                                                    <!--//col-->
+                                                    <div class="col text-end">
+                                                        <a class="btn-sm app-btn-secondary" id="alterarNome">Alterar</a>
+                                                    </div>
+                                                    <!--//col-->
+                                                </div>
+                                                <!--//row-->
+                                            </div>
+                                            <!--//item-->
+                                            <div class="item border-bottom py-3">
+                                                <div class="row justify-content-between align-items-center">
+                                                    <div class="col">
+                                                        <div class="item-label"><strong id="erroEmail">Email</strong></div>
+                                                        <input type="email" class="mt-2" id="email" value="" disabled>
+                                                    </div>
+                                                    <!--//col-->
+                                                    <div class="col text-end">
+                                                        <a class="btn-sm app-btn-secondary" id="alterarEmail">Alterar</a>
+                                                    </div>
+                                                    <!--//col-->
+                                                </div>
+                                                <!--//row-->
+                                            </div>
+                                            <div class="item border-bottom py-3">
+                                                <div class="row justify-content-between align-items-center">
+                                                    <div class="col">
+                                                        <div class="item-label"><strong id="erroEmail">CPF</strong></div>
+                                                        <input type="email" class="mt-2" id="cpf" value="" disabled>
+                                                    </div>                                          
+                                                    <!--//col-->
+                                                </div>
+                                                <!--//row-->
+                                            </div>
+                                            <div class="item border-bottom py-3">
+                                                <div class="row justify-content-between align-items-center">
+                                                    <div class="col">
+                                                        <div class="item-label"><strong>Cargo</strong></div>
+                                                        <input type="text" class="mt-2" id="inputProfile" value="" disabled>
+                                                    </div>
+                                                    <!--//col-->
+                                                </div>
+                                                <!--//row-->
+                                            </div>
+                                            <div class="app-card-footer pt-4 mt-auto">
+                                                <a class="btn btn-outline-secondary" href="#">Salvar</a>
+                                            </div>
+                                            <!--//item-->
+                                        </div>
+                                        <!--//app-card-body-->
+                                    </div>
+                                    <!--//app-card-->
+                                </div>
+                                <!--//col-->
+                                <div class="col-12 col-lg-12 mt-5">
+                                    <div class="app-card app-card-account shadow-sm d-flex flex-column align-items-start" style="background-color: white; border-radius: 15px;">
+                                        <div class="app-card-header p-3 border-bottom-0">
+                                            <div class="row align-items-center gx-3">
+                                                <div class="col-auto">
+                                                    <div class="app-icon-holder">
+                                                        <svg width="1em" height="1em" viewBox="0 0 16 16"
+                                                            class="bi bi-shield-check" fill="currentColor"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd"
+                                                                d="M5.443 1.991a60.17 60.17 0 0 0-2.725.802.454.454 0 0 0-.315.366C1.87 7.056 3.1 9.9 4.567 11.773c.736.94 1.533 1.636 2.197 2.093.333.228.626.394.857.5.116.053.21.089.282.11A.73.73 0 0 0 8 14.5c.007-.001.038-.005.097-.023.072-.022.166-.058.282-.111.23-.106.525-.272.857-.5a10.197 10.197 0 0 0 2.197-2.093C12.9 9.9 14.13 7.056 13.597 3.159a.454.454 0 0 0-.315-.366c-.626-.2-1.682-.526-2.725-.802C9.491 1.71 8.51 1.5 8 1.5c-.51 0-1.49.21-2.557.491zm-.256-.966C6.23.749 7.337.5 8 .5c.662 0 1.77.249 2.813.525a61.09 61.09 0 0 1 2.772.815c.528.168.926.623 1.003 1.184.573 4.197-.756 7.307-2.367 9.365a11.191 11.191 0 0 1-2.418 2.3 6.942 6.942 0 0 1-1.007.586c-.27.124-.558.225-.796.225s-.526-.101-.796-.225a6.908 6.908 0 0 1-1.007-.586 11.192 11.192 0 0 1-2.417-2.3C2.167 10.331.839 7.221 1.412 3.024A1.454 1.454 0 0 1 2.415 1.84a61.11 61.11 0 0 1 2.772-.815z" />
+                                                            <path fill-rule="evenodd"
+                                                                d="M10.854 6.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 8.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+                                                        </svg>
+                                                    </div>
+                                                    <!--//icon-holder-->
+                                                </div>
+                                                <!--//col-->
+                                                <div class="col-auto">
+                                                    <h4 class="app-card-title">Segurança</h4>
+                                                </div>
+                                                <!--//col-->
+                                            </div>
+                                            <!--//row-->
+                                        </div>
+                                        <!--//app-card-header-->
+                                        <div class="app-card-body px-4 w-100">
+
+                                            <div class="item border-bottom py-3">
+                                                <div class="row justify-content-between align-items-center">
+                                                    <div class="col-auto">
+                                                        <div class="item-label"><strong id="erroPassword">Senha</strong></div>
+                                                        <input type="password" class="mt-2" id="password" placeholder="*****">
+                                                    </div>
+                                                    <!--//col-->
+                                                    <div class="col text-end">
+                                                        <a class="btn-sm app-btn-secondary" id="alterarPassword">Alterar</a>
+                                                    </div>
+                                                    <!--//col-->
+                                                </div>
+                                                <!--//row-->
+                                            </div>
+                                            <!--//item-->
+                                            <!-- <div class="item border-bottom py-3">
+                                                <div class="row justify-content-between align-items-center">
+                                                    <div class="col-auto">
+                                                        <div class="item-label"><strong>Two-Factor
+                                                                Authentication</strong></div>
+                                                        <div class="item-data">You haven't set up two-factor
+                                                            authentication. </div>
+                                                    </div>
+                                                    <div class="col text-end">
+                                                        <a class="btn-sm app-btn-secondary" href="#">Set up</a>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                            <!--//item-->
+                                        </div>
+                                        <!--//app-card-body-->
+                                        <div class="app-card-footer p-4 mt-auto">
+                                            <a class="btn btn-outline-secondary"  id="salvar">Salvar</a>
+                                        </div>
+                                        <!--//app-card-footer-->
+                                    </div>
+                                    <!--//app-card-->
+                                </div>
+                                <!-- <div class="col-12 col-lg-6">
+                                    <div class="app-card app-card-account shadow-sm d-flex flex-column align-items-start">
+                                        <div class="app-card-header p-3 border-bottom-0">
+                                            <div class="row align-items-center gx-3">
+                                                <div class="col-auto">
+                                                    <div class="app-icon-holder">
+                                                        <svg width="1em" height="1em" viewBox="0 0 16 16"
+                                                            class="bi bi-sliders" fill="currentColor"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd"
+                                                                d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1h9.05z" />
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <h4 class="app-card-title">Preferences</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="app-card-body px-4 w-100">
+                                            <div class="item border-bottom py-3">
+                                                <div class="row justify-content-between align-items-center">
+                                                    <div class="col-auto">
+                                                        <div class="item-label"><strong>Language </strong></div>
+                                                        <div class="item-data">English</div>
+                                                    </div>
+                                                    <div class="col text-end">
+                                                        <a class="btn-sm app-btn-secondary" href="#">Alterar</a>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            <div class="item border-bottom py-3">
+                                                <div class="row justify-content-between align-items-center">
+                                                    <div class="col-auto">
+                                                        <div class="item-label"><strong>Time Zone</strong></div>
+                                                        <div class="item-data">Central Standard Time (UTC-6)</div>
+                                                    </div>
+                                                    <div class="col text-end">
+                                                        <a class="btn-sm app-btn-secondary" href="#">Alterar</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item border-bottom py-3">
+                                                <div class="row justify-content-between align-items-center">
+                                                    <div class="col-auto">
+                                                        <div class="item-label"><strong>Currency</strong></div>
+                                                        <div class="item-data">$(US Dollars)</div>
+                                                    </div>
+                                                    <div class="col text-end">
+                                                        <a class="btn-sm app-btn-secondary" href="#">Alterar</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item border-bottom py-3">
+                                                <div class="row justify-content-between align-items-center">
+                                                    <div class="col-auto">
+                                                        <div class="item-label"><strong>Email Subscription</strong>
+                                                        </div>
+                                                        <div class="item-data">Off</div>
+                                                    </div>
+                                                    <div class="col text-end">
+                                                        <a class="btn-sm app-btn-secondary" href="#">Alterar</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item border-bottom py-3">
+                                                <div class="row justify-content-between align-items-center">
+                                                    <div class="col-auto">
+                                                        <div class="item-label"><strong>SMS Notifications</strong></div>
+                                                        <div class="item-data">On</div>
+                                                    </div>
+                                                    <div class="col text-end">
+                                                        <a class="btn-sm app-btn-secondary" href="#">Alterar</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="app-card-footer p-4 mt-auto">
+                                            <a class="btn app-btn-secondary" href="#">Manage Preferences</a>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <!--//row-->
+                        </div>
+                        <!--//container-fluid-->
+                    </div>
+                    <!--//app-content-->
+                </div>
+                <!--//app-wrapper-->
+            </main>
+            <!-- FOOTER -->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row text-muted">
+                        <div class="col-6 text-start">
+                            <p class="mb-0">
+                                <small class="level-item is-size-7 has-text-weight-bold" style="color: var(--textLight)"> &copy; <strong>Nastek Industria e Tecnologia.</strong> All Rights Reserved.
+                                </small>
+                            </p>
+                        </div>
+                        <div class="col-6 text-end">
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <a class="text-muted" href="#">Support</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a class="text-muted" href="#">Help Center</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- FOOTER -->
+        </div>
+    </div>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTCFKDaDJbda8Pq8tlKbD_C_xED88oMg8"></script>
+    <script src="js/app.js"></script>
+    <script src="js/account.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>

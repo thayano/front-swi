@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Responsive Admin &amp; Dashboard Template">
+	<meta name="author" content="AdminKit">
+	<meta name="keywords" content="bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
+	<link href="css/app.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+	<style>
+		.bordaFaseA {
+			
+			color: #ff9f1c;
+			transition: all 0.3s;
+			border-bottom: 0.16em solid #fff;
+		}
+
+		span.bordaFaseA:hover {
+			border-bottom: 0.16em solid #006c67;
+			border-radius: 3px;
+		}
+
+		.bordaFaseB {
+			color: #006c67;
+			transition: all 0.3s;
+			border-bottom: 0.16em solid #fff;
+			
+		}
+
+		span.bordaFaseB:hover {
+			border-bottom: 0.16em solid #ff9f1c;
+			border-radius: 3px;
+		}
+		.bordaFaseC {
+			color: #ff6392;
+			transition: all 0.3s;
+			border-bottom: 0.16em solid #fff;
+		}
+		span.bordaFaseC:hover {
+			border-bottom: 0.16em solid #ff6392;
+			border-radius: 3px;
+		}
+		.icone{
+			width:38px; 
+			height: 38px; 
+			border-radius:50%;
+			background-color:rgb(255, 255, 255);
+			opacity: 0.6;
+  			transition: 0.3s;
+			
+		}
+		.icone:hover{opacity: 1}
+
+		.fontStyle {
+			color: #fff;
+			font-size: 14px;
+		}
+		.listaMedicoes a {
+			background-color: #222e3c;
+			color: #ddd;
+			padding-top: 12px;
+			border:none;
+		}
+		.bordaRe {
+		overflow: hidden;
+		border-radius: 15px;
+		-moz-border-radius: 15px;
+		-webkit-mask-border-radius: 15px;
+		-webkit-border-radius: 15px;
+		background-color: #dfe9f0;
+	}
+	</style>
+
+</head>
+<body >
+	<div class="wrapper" >
+		<nav id="sidebar" class="sidebar js-sidebar">
+			<div class="sidebar-content js-simplebar">
+				<a class="sidebar-brand" href="#">
+					<span class="align-middle">Opções</span>
+				</a>
+				<!-- DEVICES  -->
+				<div class="container-fluid p-0">
+					<div class="row">
+						<div class="col-xl-12 col-xxl-12 d-flex">
+							<div class="w-100">
+								<div class="row p-3">
+									<div class="col">
+										<div class="nav justify-content-center align-items-center icone" >
+											<div class="app-icon-holder" data-toggle="tooltip" data-placement="bottom" title="Hooray!">
+												<span class="d-inline-block">
+													<svg xmlns="http://www.w3.org/2000/svg" width="25px" fill="#457b9d" viewBox="0 0 480 512">
+														<path d="M313.2 47.5c1.2-13 21.3-14 36.6-8.7.9.3 26.2 9.7 19 15.2-27.9-7.4-56.4 18.2-55.6-6.5zm-201 6.9c30.7-8.1 62 20 61.1-7.1-1.3-14.2-23.4-15.3-40.2-9.6-1 .3-28.7 10.5-20.9 16.7zM319.4 160c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16zm-159.7 0c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16zm318.5 163.2c-9.9 24-40.7 11-63.9-1.2-13.5 69.1-58.1 111.4-126.3 124.2.3.9-2-.1 24 1 33.6 1.4 63.8-3.1 97.4-8-19.8-13.8-11.4-37.1-9.8-38.1 1.4-.9 14.7 1.7 21.6 11.5 8.6-12.5 28.4-14.8 30.2-13.6 1.6 1.1 6.6 20.9-6.9 34.6 4.7-.9 8.2-1.6 9.8-2.1 2.6-.8 17.7 11.3 3.1 13.3-14.3 2.3-22.6 5.1-47.1 10.8-45.9 10.7-85.9 11.8-117.7 12.8l1 11.6c3.8 18.1-23.4 24.3-27.6 6.2.8 17.9-27.1 21.8-28.4-1l-.5 5.3c-.7 18.4-28.4 17.9-28.3-.6-7.5 13.5-28.1 6.8-26.4-8.5l1.2-12.4c-36.7.9-59.7 3.1-61.8 3.1-20.9 0-20.9-31.6 0-31.6 2.4 0 27.7 1.3 63.2 2.8-61.1-15.5-103.7-55-114.9-118.2-25 12.8-57.5 26.8-68.2.8-10.5-25.4 21.5-42.6 66.8-73.4.7-6.6 1.6-13.3 2.7-19.8-14.4-19.6-11.6-36.3-16.1-60.4-16.8 2.4-23.2-9.1-23.6-23.1.3-7.3 2.1-14.9 2.4-15.4 1.1-1.8 10.1-2 12.7-2.6 6-31.7 50.6-33.2 90.9-34.5 19.7-21.8 45.2-41.5 80.9-48.3C203.3 29 215.2 8.5 216.2 8c1.7-.8 21.2 4.3 26.3 23.2 5.2-8.8 18.3-11.4 19.6-10.7 1.1.6 6.4 15-4.9 25.9 40.3 3.5 72.2 24.7 96 50.7 36.1 1.5 71.8 5.9 77.1 34 2.7.6 11.6.8 12.7 2.6.3.5 2.1 8.1 2.4 15.4-.5 13.9-6.8 25.4-23.6 23.1-3.2 17.3-2.7 32.9-8.7 47.7 2.4 11.7 4 23.8 4.8 36.4 37 25.4 70.3 42.5 60.3 66.9zM207.4 159.9c.9-44-37.9-42.2-78.6-40.3-21.7 1-38.9 1.9-45.5 13.9-11.4 20.9 5.9 92.9 23.2 101.2 9.8 4.7 73.4 7.9 86.3-7.1 8.2-9.4 15-49.4 14.6-67.7zm52 58.3c-4.3-12.4-6-30.1-15.3-32.7-2-.5-9-.5-11 0-10 2.8-10.8 22.1-17 37.2 15.4 0 19.3 9.7 23.7 9.7 4.3 0 6.3-11.3 19.6-14.2zm135.7-84.7c-6.6-12.1-24.8-12.9-46.5-13.9-40.2-1.9-78.2-3.8-77.3 40.3-.5 18.3 5 58.3 13.2 67.8 13 14.9 76.6 11.8 86.3 7.1 15.8-7.6 36.5-78.9 24.3-101.3z" />
+													</svg>
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="nav justify-content-center align-items-center icone" >
+											<div class="app-icon-holder" data-toggle="tooltip" data-placement="bottom" title="Hooray!">
+												<span class="d-inline-block">
+													<svg xmlns="http://www.w3.org/2000/svg" width="25px" fill="#d90429" viewBox="0 0 512 512">
+														<path d="M160.8 96.5c14 17 31 30.9 49.5 42.2c25.9 15.8 53.7 25.9 77.7 31.6V138.8C265.8 108.5 250 71.5 248.6 28c-.4-11.3-7.5-21.5-18.4-24.4c-7.6-2-15.8-.2-21 5.8c-13.3 15.4-32.7 44.6-48.4 87.2zM320 144v30.6l0 0v1.3l0 0 0 32.1c-60.8-5.1-185-43.8-219.3-157.2C97.4 40 87.9 32 76.6 32c-7.9 0-15.3 3.9-18.8 11C46.8 65.9 32 112.1 32 176c0 116.9 80.1 180.5 118.4 202.8L11.8 416.6C6.7 418 2.6 421.8 .9 426.8s-.8 10.6 2.3 14.8C21.7 466.2 77.3 512 160 512c3.6 0 7.2-1.2 10-3.5L245.6 448H320c88.4 0 160-71.6 160-160V128l29.9-44.9c1.3-2 2.1-4.4 2.1-6.8c0-6.8-5.5-12.3-12.3-12.3H400c-44.2 0-80 35.8-80 80zm80 16c-8.8 0-16-7.2-16-16s7.2-16 16-16s16 7.2 16 16s-7.2 16-16 16z" />
+													</svg>
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="nav justify-content-center align-items-center icone" >
+											<div class="app-icon-holder" data-toggle="tooltip" data-placement="bottom" title="Hooray!">
+												<span class="d-inline-block">
+													<svg xmlns="http://www.w3.org/2000/svg" fill="#40916c" width="25px" viewBox="0 0 512 512">
+														<path d="M272 96c-78.6 0-145.1 51.5-167.7 122.5c33.6-17 71.5-26.5 111.7-26.5h88c8.8 0 16 7.2 16 16s-7.2 16-16 16H288 216s0 0 0 0c-16.6 0-32.7 1.9-48.3 5.4c-25.9 5.9-49.9 16.4-71.4 30.7c0 0 0 0 0 0C38.3 298.8 0 364.9 0 440v16c0 13.3 10.7 24 24 24s24-10.7 24-24V440c0-48.7 20.7-92.5 53.8-123.2C121.6 392.3 190.3 448 272 448l1 0c132.1-.7 239-130.9 239-291.4c0-42.6-7.5-83.1-21.1-119.6c-2.6-6.9-12.7-6.6-16.2-.1C455.9 72.1 418.7 96 376 96L272 96z" />
+													</svg>
+												</span>
+											</div>
+										</div>		
+									</div>
+									<div class="col">
+										<div class="nav justify-content-center align-items-center icone" >
+											<div class="app-icon-holder" data-toggle="tooltip" data-placement="bottom" title="Hooray!">
+												<span class="d-inline-block">
+													<svg xmlns="http://www.w3.org/2000/svg" width="25px" viewBox="0 0 512 512">
+														<path d="M32 32H480c17.7 0 32 14.3 32 32V96c0 17.7-14.3 32-32 32H32C14.3 128 0 113.7 0 96V64C0 46.3 14.3 32 32 32zm0 128H480V416c0 35.3-28.7 64-64 64H96c-35.3 0-64-28.7-64-64V160zm128 80c0 8.8 7.2 16 16 16H336c8.8 0 16-7.2 16-16s-7.2-16-16-16H176c-8.8 0-16 7.2-16 16z" />
+													</svg>
+												</span>
+											</div>
+										</div>	
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /DEVICES  -->
+				<!-- OPÇÔES  -->
+							<div class="w-80 mt-3">
+								<div class="row">
+									<div class="col" style="margin-left: 25px;">
+										<div class="form-floating mt-4 ">
+											<select class="form-select " id="floatingSelectGrid" style="width: 85%;" aria-label="Floating label select example">
+												<option selected>Estrutura</option>
+												<option value="1">One</option>
+												<option value="2">Two</option>
+												<option value="3">Three</option>
+											</select>
+											<label for="floatingSelectGrid" class="" style="color:#161618">Selecione a Estrutura:</label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="w-80 mt-4 mb-4">
+								<div class="row">
+									<div class="col" style="margin-left: 25px;">
+										<div class="form-floating mt-4 ">
+											<select class="form-select " id="floatingSelectGrid" style="width: 85%;" aria-label="Floating label select example">
+												<option selected>Estrutura</option>
+												<option value="1">One</option>
+												<option value="2">Two</option>
+												<option value="3">Three</option>
+											</select>
+											<label for="floatingSelectGrid" class="" style="color:#161618">Selecione o Sensor:</label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="data-div ms-4 w-80 mt-5">
+								<label class="text-dark ml-2 for=" diaa">
+									<span class="fontStyle">
+										<strong>Selecione o Periodo:</strong>
+									</span> 
+								</label>
+								<div class="mt-3 d-flex">
+									<label class="text-light" for="diaa" style="width:30px">
+										<span class="fontStyle">Inicio: </span>
+									</label>
+									<span class="d-flex justify-content-end">
+										<input autocomplete="off" autocorrect="off" id="date" spellcheck="false"
+										type="date" aria-label="data" maxlength="23"
+										placeholder="Selecione um período"
+										style="height: 32px; font-size: 16px; width:89%; border-radius: 2px; border-color: #ddd;"
+										aria-label=".form-select-sm example" class="justify-content-md-end form-control">
+									</span>
+								</div>
+								<div class="mt-3 d-flex">
+									<label class="text-light" for="diaa" style="width:30px">
+										<span class="fontStyle">Fim: </span>
+									</label>
+									<span class=" d-flex  justify-content-end">
+										<input autocomplete="off" autocorrect="off" onchange="desenhaGraficos()"
+											id="date1" spellcheck="false" type="date" aria-label="data" maxlength="23"
+											placeholder="Selecione um período"
+											style="height: 32px; font-size: 16px; width: 89%; border-radius: 2px; border-color: #ddd;"
+											aria-label=".form-select-sm example" class="justify-content-md-end form-control">
+									</span>
+									
+								</div>
+							</div>
+				<!-- / OPÇÔES  -->
+				<!-- SELECT MEDIÇÕES -->
+				<div class="mt-5">
+					<ul class="sidebar-nav">
+						<label class="text-dark ms-4 mt-4 for=" diaa">
+							<span class="fontStyle">
+								<strong>Medições</strong>
+							</span> 
+						</label>
+					
+						<li class="sidebar-item mt-3">
+							<a class="sidebar-link" href="#">
+								<i class="align-middle" data-feather="git-pull-request"></i>
+								<span class="align-middle">Tensão</span>
+							</a>
+						</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="#">
+							<i class="align-middle" data-feather="activity"></i> 
+							<span class="align-middle">Corrente</span>
+						</a>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="#">
+							<i class="align-middle" data-feather="play"></i> 
+							<span class="align-middle">Fator de Potência</span>
+						</a>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="#">
+							<i class="align-middle" data-feather="battery-charging"></i> 
+							<span class="align-middle">Bateria</span>
+						</a>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="#">
+							<i class="align-middle" data-feather="git-branch"></i>
+							 <span class="align-middle">Energia Ativa</span>
+						</a>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="#">
+							<i class="align-middle" data-feather="git-merge"></i>
+							 <span class="align-middle">Energia Reativa</span>
+						</a>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="#">
+							<i class="align-middle" data-feather="git-commit"></i>
+							 <span class="align-middle">Energia Total</span>
+						</a>
+					</li>
+				</div>
+				<!-- /SELECT MEDIÇÕES -->
+			</div>
+		</nav>
+		<div class="main">
+			<nav class="navbar navbar-expand navbar-light navbar-bg">
+				<div class="container-fluid" style="margin-left: auto; ">
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					  <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+						<li class="nav-item mt-1">
+							<div class="d-flex flex-row">
+								<img src="./logo_azul.png" height="25px">
+							</div>
+						</li>
+						<li class="nav-item ms-3">
+						  <a class="nav-link" href="#">Relatórios</a>
+						</li>
+						<li class="nav-item dropdown">
+						  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+						  <ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="#">Action</a></li>
+							<li><a class="dropdown-item" href="#">Another action</a></li>
+							<li><hr class="dropdown-divider"></li>
+							<li><a class="dropdown-item" href="#">Something else here</a></li>
+						  </ul>
+						</li>
+					  </ul>
+					</div>
+				  </div>
+				<a class="sidebar-toggle js-sidebar-toggle ms-4">
+					<i class="hamburger align-self-center"></i>
+				</a>
+				<div class="navbar-collapse collapse">
+					<ul class="navbar-nav navbar-align">
+						<!-- <li class="nav-item dropdown">
+							<a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-bs-toggle="dropdown">
+								<div class="position-relative">
+									<i class="align-middle" data-feather="bell"></i>
+									<span class="indicator">8</span>
+								</div>
+							</a>
+							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0"
+								aria-labelledby="alertsDropdown">
+								<div class="dropdown-menu-header"> 8 New Notifications </div>
+								<div class="list-group">
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<i class="text-danger" data-feather="alert-circle"></i>
+											</div>
+											<div class="col-10">
+												<div class="text-dark">Update completed</div>
+												<div class="text-muted small mt-1">Restart server 12 to complete the
+													update.</div>
+												<div class="text-muted small mt-1">30m ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<i class="text-warning" data-feather="bell"></i>
+											</div>
+											<div class="col-10">
+												<div class="text-dark">Lorem ipsum</div>
+												<div class="text-muted small mt-1">Aliquam ex eros, imperdiet vulputate
+													hendrerit et.</div>
+												<div class="text-muted small mt-1">2h ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<i class="text-primary" data-feather="home"></i>
+											</div>
+											<div class="col-10">
+												<div class="text-dark">Login from 192.186.1.8</div>
+												<div class="text-muted small mt-1">5h ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<i class="text-success" data-feather="user-plus"></i>
+											</div>
+											<div class="col-10">
+												<div class="text-dark">New connection</div>
+												<div class="text-muted small mt-1">Christina accepted your request.
+												</div>
+												<div class="text-muted small mt-1">14h ago</div>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="dropdown-menu-footer">
+									<a href="#" class="text-muted">Show all notifications</a>
+								</div>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown"
+								data-bs-toggle="dropdown">
+								<div class="position-relative">
+									<i class="align-middle" data-feather="message-square"></i>
+								</div>
+							</a>
+							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0"
+								aria-labelledby="messagesDropdown">
+								<div class="dropdown-menu-header">
+									<div class="position-relative">
+										4 New Messages
+									</div>
+								</div>
+								<div class="list-group">
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<i class="align-middle me-2" data-feather="user"></i>
+											</div>
+											<div class="col-10 ps-2">
+												<div class="text-dark">Vanessa Tucker</div>
+												<div class="text-muted small mt-1">Nam pretium turpis et arcu. Duis arcu
+													tortor.</div>
+												<div class="text-muted small mt-1">15m ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<i class="align-middle me-2" data-feather="user"></i>
+											</div>
+											<div class="col-10 ps-2">
+												<div class="text-dark">William Harris</div>
+												<div class="text-muted small mt-1">Curabitur ligula sapien euismod
+													vitae.</div>
+												<div class="text-muted small mt-1">2h ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<i class="align-middle me-2" data-feather="user"></i>
+											</div>
+											<div class="col-10 ps-2">
+												<div class="text-dark">Christina Mason</div>
+												<div class="text-muted small mt-1">Pellentesque auctor neque nec urna.
+												</div>
+												<div class="text-muted small mt-1">4h ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<i class="align-middle me-2" data-feather="user"></i>
+											</div>
+											<div class="col-10 ps-2">
+												<div class="text-dark">Sharon Lessman</div>
+												<div class="text-muted small mt-1">Aenean tellus metus, bibendum sed,
+													posuere ac, mattis non.</div>
+												<div class="text-muted small mt-1">5h ago</div>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="dropdown-menu-footer">
+									<a href="#" class="text-muted">Show all messages</a>
+								</div>
+							</div>
+						</li> -->
+						<li class="nav-item dropdown">
+							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#"
+								data-bs-toggle="dropdown">
+								<i class="align-middle" data-feather="settings"></i>
+							</a>
+
+							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#"
+								data-bs-toggle="dropdown">
+								<i class="align-middle me-2" data-feather="user"></i>
+									<span class="text-dark">Usuario</span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-end">
+								<a class="dropdown-item" href="account.html"><i class="align-middle me-1"
+										data-feather="user"></i> Perfil</a>
+								<a class="dropdown-item" href="#"><i class="align-middle me-1"
+										data-feather="pie-chart"></i> Relatórios</a>
+								<div class="dropdown-divider"></div>
+								<!-- <a class="dropdown-item" href="index.html"><i class="align-middle me-1"
+										data-feather="settings"></i> Settings & Privacy</a> -->
+								<!-- <a class="dropdown-item" href="#"><i class="align-middle me-1"
+										data-feather="help-circle"></i> Help Center</a> -->
+								<!-- <div class="dropdown-divider"></div> -->
+								<a class="dropdown-item" href="#">Sair</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<main class="content p-3" style="background-color: white;">
+				<div class="container-fluid p-4 bordaRe" >
+					<h1 class="h3 mb-3">
+						<strong>Alarmes</strong>
+					</h1>
+					<!-- ALARMES  -->
+					<div class="row">
+						<div class="col-xl-12 col-xxl-12 d-flex">
+							<div class="w-100">
+								<div class="row">
+									<div class="col">
+										<div class="card">
+											<div class="card-body">
+												<div class="row">
+													<div class="col mt-0">
+														<h5 class="card-title text-center">OSCILAÇÃO DE TENSÃO</h5>
+													</div>
+												</div>
+												<div class="nav justify-content-center">
+													<svg xmlns="http://www.w3.org/2000/svg" width="50"
+														style="margin: auto;" height="50" fill="currentColor"
+														class="bi bi-soundwave" viewBox="0 0 16 16">
+														<path fill-rule="evenodd"
+															d="M8.5 2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-1 0v-11a.5.5 0 0 1 .5-.5zm-2 2a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zm4 0a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zm-6 1.5A.5.5 0 0 1 5 6v4a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm8 0a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm-10 1A.5.5 0 0 1 3 7v2a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5zm12 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5z" />
+													</svg>
+												</div>
+												<div class="mb-0">
+													<!-- espaço para data do alarme-->
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="card">
+											<div class="card-body">
+												<div class="row">
+													<div class="col mt-0">
+														<h5 class="card-title text-center">ALARME DE <br> BATERIA</h5>
+													</div>
+												</div>
+												<div class="nav justify-content-center">
+													<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+														fill="currentColor" class="bi bi-battery" viewBox="0 0 16 16">
+														<path
+															d="M0 6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6zm2-1a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H2zm14 3a1.5 1.5 0 0 1-1.5 1.5v-3A1.5 1.5 0 0 1 16 8z" />
+													</svg>
+												</div>
+												<div class="mb-0">
+													<!-- espaço para data do alarme-->
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="card">
+											<div class="card-body">
+												<div class="row">
+													<div class="col mt-0">
+														<h5 class="card-title text-center">FALTA DE<br> FASE</h5>
+													</div>
+												</div>
+												<div class="nav justify-content-center">
+													<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+														fill="currentColor" class="bi bi-sort-down" viewBox="0 0 16 16">
+														<path
+															d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z" />
+													</svg>
+												</div>
+												<div class="mb-0">
+													<!-- espaço para data do alarme-->
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="card">
+											<div class="card-body">
+												<div class="row">
+													<div class="col mt-0">
+														<h5 class="card-title text-center">CURTO <br>PERMANENTE</h5>
+													</div>
+												</div>
+												<div class="nav justify-content-center">
+													<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+														fill="white" class="bi bi-x-circle-fill fa-blink"
+														viewBox="0 0 16 16">
+														<path
+															d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+													</svg>
+												</div>
+												<div class="mb-0">
+													<!-- espaço para data do alarme-->
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="card" style="background-color:#d90429">
+											<div class="card-body">
+												<div class="row">
+													<div class="col mt-0">
+														<h5 class="card-title text-center" style="color:white">CURTO<br>TRANSITÓRIO</h5>
+													</div>
+												</div>
+												<div class="nav justify-content-center">
+													<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+														fill="white" class="bi bi-shuffle" viewBox="0 0 16 16">
+														<path fill-rule="evenodd"
+															d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.624 9.624 0 0 0 7.556 8a9.624 9.624 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.595 10.595 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.624 9.624 0 0 0 6.444 8a9.624 9.624 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5z" />
+														<path
+															d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192zm0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192z" />
+													</svg>
+												</div>
+												<div class="mb-0">
+													<!-- espaço para data do alarme-->
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="card">
+											<div class="card-body">
+												<div class="row">
+													<div class="col mt-0">
+														<h5 class="card-title text-center">FALTA DE<br> CORRENTE</h5>
+													</div>
+												</div>
+												<div class="nav justify-content-center">
+													<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+														fill="currentColor" class="bi bi-lightning-charge-fill"
+														viewBox="0 0 16 16">
+														<path
+															d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z" />
+													</svg>
+												</div>
+												<div class="mb-0">
+													<!-- espaço para data do alarme-->
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="card">
+											<div class="card-body">
+												<div class="row">
+													<div class="col mt-0">
+														<h5 class="card-title text-center">DIREÇAO DA CORRENTE</h5>
+													</div>
+												</div>
+												<div class="nav justify-content-center">
+													<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+														fill="currentColor" class="bi bi-bezier2" viewBox="0 0 16 16">
+														<path fill-rule="evenodd"
+															d="M1 2.5A1.5 1.5 0 0 1 2.5 1h1A1.5 1.5 0 0 1 5 2.5h4.134a1 1 0 1 1 0 1h-2.01c.18.18.34.381.484.605.638.992.892 2.354.892 3.895 0 1.993.257 3.092.713 3.7.356.476.895.721 1.787.784A1.5 1.5 0 0 1 12.5 11h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5H6.866a1 1 0 1 1 0-1h1.711a2.839 2.839 0 0 1-.165-.2C7.743 11.407 7.5 10.007 7.5 8c0-1.46-.246-2.597-.733-3.355-.39-.605-.952-1-1.767-1.112A1.5 1.5 0 0 1 3.5 5h-1A1.5 1.5 0 0 1 1 3.5v-1zM2.5 2a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm10 10a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z" />
+													</svg>
+												</div>
+												<div class="mb-0">
+													<!-- espaço para data do alarme-->
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="card">
+											<div class="card-body">
+												<div class="row">
+													<div class="col mt-0">
+														<h5 class="card-title text-center">FALTA DE COMUNICAÇÃO</h5>
+													</div>
+												</div>
+												<div class="nav justify-content-center">
+													<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+														fill="currentColor" class="bi bi-wifi-off" viewBox="0 0 16 16">
+														<path
+															d="M10.706 3.294A12.545 12.545 0 0 0 8 3C5.259 3 2.723 3.882.663 5.379a.485.485 0 0 0-.048.736.518.518 0 0 0 .668.05A11.448 11.448 0 0 1 8 4c.63 0 1.249.05 1.852.148l.854-.854zM8 6c-1.905 0-3.68.56-5.166 1.526a.48.48 0 0 0-.063.745.525.525 0 0 0 .652.065 8.448 8.448 0 0 1 3.51-1.27L8 6zm2.596 1.404.785-.785c.63.24 1.227.545 1.785.907a.482.482 0 0 1 .063.745.525.525 0 0 1-.652.065 8.462 8.462 0 0 0-1.98-.932zM8 10l.933-.933a6.455 6.455 0 0 1 2.013.637c.285.145.326.524.1.75l-.015.015a.532.532 0 0 1-.611.09A5.478 5.478 0 0 0 8 10zm4.905-4.905.747-.747c.59.3 1.153.645 1.685 1.03a.485.485 0 0 1 .047.737.518.518 0 0 1-.668.05 11.493 11.493 0 0 0-1.811-1.07zM9.02 11.78c.238.14.236.464.04.66l-.707.706a.5.5 0 0 1-.707 0l-.707-.707c-.195-.195-.197-.518.04-.66A1.99 1.99 0 0 1 8 11.5c.374 0 .723.102 1.021.28zm4.355-9.905a.53.53 0 0 1 .75.75l-10.75 10.75a.53.53 0 0 1-.75-.75l10.75-10.75z" />
+													</svg>
+												</div>
+												<div class="mb-0">
+													<!-- espaço para data do alarme-->
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /ALARMES -->
+					<!-- MEDICOES  -->
+					<h1 class="h3 mb-2"><strong>Medições</strong></h1>
+					<div class="row">
+						<div class="col-xl-12 col-xxl-12 d-flex">
+							<div class="w-100">
+								<div class="row">
+									<div class="col">
+										<div class="card">
+											<div class="card-body">
+												<div class="row">
+													<div class="col mt-0">
+														<p class="card-title text-center bordaFaseA" style="font-size: 20px;"><strong>Fase A</strong></p>
+													</div>
+												</div>
+												<div class="container mt-3">
+													<div class="row row-cols-2">
+														<div class="col fontTamanho2 flex-row">Med: <span class="h1 ml-2" style="color:#575769;">40</span></div>
+														<div class="col">
+															<div class="row row-cols-1" style="border-left: solid 2px #ff9f1c; ">
+																<div class="col pb-2">
+																	<span class="fontTamanho">Max:
+																		<span class="h5 ml-1"> 40</span>
+																	</span>
+																</div>
+																<hr style="width: 60%; color: #ff9f1c; height: 1px; background-color:#ff9f1c; margin: auto; "/>
+																<div class="col pt-2">
+																	<span class="fontTamanho">Min: <span class="h5 ml-1">40</span></span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="mb-0">
+													<!-- espaço para data do alarme-->
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="card">
+											<div class="card-body">
+												<div class="row">
+													<div class="col mt-0">
+														<p class="card-title text-center bordaFaseB" style="font-size: 20px;"><strong>Fase B</strong></p>
+													</div>
+												</div>
+												<div class="container mt-3">
+													<div class="row row-cols-2">
+														<div class="col fontTamanho2 flex-row">Med: <span class="h1 ml-2" style="color:#575769;">40</span></div>
+														<div class="col">
+															<div class="row row-cols-1" style="border-left: solid 2px #006c67;">
+																<div class="col pb-2">
+																	<span class="fontTamanho">Max:
+																		<span class="h5 ml-1"> 40</span>
+																	</span>
+																</div>
+																<hr style="width: 60%; color: #006c67; height: 1px; background-color:#006c67; margin: auto;" />
+																<div class="col pt-2">
+																	<span class="fontTamanho">Min: <span class="h5 ml-1">40</span></span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="mb-0">
+													<!-- espaço para data do alarme-->
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="card">
+											<div class="card-body">
+												<div class="row">
+													<div class="col mt-0">
+														<p class="card-title text-center bordaFaseC" style="font-size: 20px;">Fase C</p>
+													</div>
+												</div>
+												<div class="container mt-3">
+													<div class="row row-cols-2">
+														<div class="col fontTamanho2 flex-row">Med: <span class="h1 ml-2" style="color:#575769;">40</span></div>
+														<div class="col">
+															<div class="row row-cols-1" style="border-left: solid 2px #ff6392;">
+																<div class="col pb-2">
+																	<span class="fontTamanho">Max:
+																		<span class="h5 ml-1"> 40</span>
+																	</span>
+																</div>
+																<hr style="width: 60%; color: #ff6392; height: 1px; background-color:#ff6392; margin: auto; " />
+																<div class="col pt-2">
+																	<span class="fontTamanho">Min: <span class="h5 ml-1">40</span></span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="mb-0">
+													<!-- espaço para data do alarme-->
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="card">
+											<div class="card-body">
+												<div class="row">
+													<div class="col mt-0">
+														<h5 class="card-title text-center">HUB</h5>
+													</div>
+												</div>
+												<div class="nav justify-content-center">
+													<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+														fill="white" class="bi bi-x-circle-fill fa-blink"
+														viewBox="0 0 16 16">
+														<path
+															d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+													</svg>
+												</div>
+												<div class="mb-0">
+													<!-- espaço para data do alarme-->
+													<br><br>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /MEDIÇOES -->
+					<!-- GRAFICOS  -->
+					<div class="row">
+						<div class="col-xl-12 col-xxl-12 d-flex">
+							<div class="w-100">
+								<div class="row">
+									<div class="col">
+										<div class="card shadow-sm">
+											<div class="card-body p-2" >
+												<div class="row justify-content-between align-items-center">
+													<div class="col-2">
+														<h1 class="h3 mb-3"><strong>Graficos</strong></h1>
+													</div>
+													<div class="col-2 p-3">
+														<div class="form-floating">
+															<select class="form-select" id="floatingSelectGrid" style="width: 100%;"
+																aria-label="Floating label select example">
+																<option selected>-- --</option>
+																<option value="0">00:00 as 04:00</option>
+																<option value="1">04:00 as 08:00</option>
+																<option value="2">08:00 as 12:00</option>
+																<option value="3">12:00 as 16:00</option>
+															</select>
+															<label for="floatingSelectGrid" style="color:#161618">Selecione o Periodo:</label>
+														</div>
+													</div>
+												</div>
+												<div class="chartContainer">
+													<canvas id="myChart" style="border-radius: 0px 0px 7px 7px; height: 23rem; width: 100%;"></canvas>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /GRAFICOS -->
+				</div>
+					
+			</main>
+			<footer class="footer">
+				<div class="container-fluid">
+					<div class="row text-muted">
+						<div class="col-6 text-start">
+							<p class="mb-0">
+								<small class="level-item is-size-7 has-text-weight-bold" style="color: var(--textLight)">
+									&copy; <strong>Nastek Industria e Tecnologia.</strong> All Rights Reserved.
+								</small>
+							</p>
+						</div>
+						<div class="col-6 text-end">
+							<ul class="list-inline">
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Support</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Help Center</a>
+								</li>
+								<!-- <li class="list-inline-item">
+									<a class="text-muted" href="#">Privacy</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Terms</a>
+								</li> -->
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+	<script>
+		var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+		var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+			return new bootstrap.Tooltip(tooltipTriggerEl)
+		})
+	</script>
+	<script src="js/app.js"></script>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			var ctx = document.getElementById("chartjs-dashboard-line").getContext("2d");
+			var gradient = ctx.createLinearGradient(0, 0, 0, 225);
+			gradient.addColorStop(0, "rgba(215, 227, 244, 1)");
+			gradient.addColorStop(1, "rgba(215, 227, 244, 0)");
+			// Line chart
+			new Chart(document.getElementById("chartjs-dashboard-line"), {
+				type: "line",
+				data: {
+					labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+					datasets: [{
+						label: "Sales ($)",
+						fill: true,
+						backgroundColor: gradient,
+						borderColor: window.theme.primary,
+						data: [
+							2115,
+							1562,
+							1584,
+							1892,
+							1587,
+							1923,
+							2566,
+							2448,
+							2805,
+							3438,
+							2917,
+							3327
+						]
+					}]
+				},
+				options: {
+					maintainAspectRatio: false,
+					legend: {
+						display: false
+					},
+					tooltips: {
+						intersect: false
+					},
+					hover: {
+						intersect: true
+					},
+					plugins: {
+						filler: {
+							propagate: false
+						}
+					},
+					scales: {
+						xAxes: [{
+							reverse: true,
+							gridLines: {
+								color: "rgba(0,0,0,0.0)"
+							}
+						}],
+						yAxes: [{
+							ticks: {
+								stepSize: 1000
+							},
+							display: true,
+							borderDash: [3, 3],
+							gridLines: {
+								color: "rgba(0,0,0,0.0)"
+							}
+						}]
+					}
+				}
+			});
+		});
+	</script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			// Pie chart
+			new Chart(document.getElementById("chartjs-dashboard-pie"), {
+				type: "pie",
+				data: {
+					labels: ["Chrome", "Firefox", "IE"],
+					datasets: [{
+						data: [4306, 3801, 1689],
+						backgroundColor: [
+							window.theme.primary,
+							window.theme.warning,
+							window.theme.danger
+						],
+						borderWidth: 5
+					}]
+				},
+				options: {
+					responsive: !window.MSInputMethodContext,
+					maintainAspectRatio: false,
+					legend: {
+						display: false
+					},
+					cutoutPercentage: 75
+				}
+			});
+		});
+	</script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			// Bar chart
+			new Chart(document.getElementById("chartjs-dashboard-bar"), {
+				type: "bar",
+				data: {
+					labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+					datasets: [{
+						label: "This year",
+						backgroundColor: window.theme.primary,
+						borderColor: window.theme.primary,
+						hoverBackgroundColor: window.theme.primary,
+						hoverBorderColor: window.theme.primary,
+						data: [54, 67, 41, 55, 62, 45, 55, 73, 60, 76, 48, 79],
+						barPercentage: .75,
+						categoryPercentage: .5
+					}]
+				},
+				options: {
+					maintainAspectRatio: false,
+					legend: {
+						display: false
+					},
+					scales: {
+						yAxes: [{
+							gridLines: {
+								display: false
+							},
+							stacked: false,
+							ticks: {
+								stepSize: 20
+							}
+						}],
+						xAxes: [{
+							stacked: false,
+							gridLines: {
+								color: "transparent"
+							}
+						}]
+					}
+				}
+			});
+		});
+	</script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			var markers = [{
+				coords: [31.230391, 121.473701],
+				name: "Shanghai"
+			},
+			{
+				coords: [28.704060, 77.102493],
+				name: "Delhi"
+			},
+			{
+				coords: [6.524379, 3.379206],
+				name: "Lagos"
+			},
+			{
+				coords: [35.689487, 139.691711],
+				name: "Tokyo"
+			},
+			{
+				coords: [23.129110, 113.264381],
+				name: "Guangzhou"
+			},
+			{
+				coords: [40.7127837, -74.0059413],
+				name: "New York"
+			},
+			{
+				coords: [34.052235, -118.243683],
+				name: "Los Angeles"
+			},
+			{
+				coords: [41.878113, -87.629799],
+				name: "Chicago"
+			},
+			{
+				coords: [51.507351, -0.127758],
+				name: "London"
+			},
+			{
+				coords: [40.416775, -3.703790],
+				name: "Madrid "
+			}
+			];
+			var map = new jsVectorMap({
+				map: "world",
+				selector: "#world_map",
+				zoomButtons: true,
+				markers: markers,
+				markerStyle: {
+					initial: {
+						r: 9,
+						strokeWidth: 7,
+						stokeOpacity: .4,
+						fill: window.theme.primary
+					},
+					hover: {
+						fill: window.theme.primary,
+						stroke: window.theme.primary
+					}
+				},
+				zoomOnScroll: false
+			});
+			window.addEventListener("resize", () => {
+				map.updateSize();
+			});
+		});
+	</script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			var date = new Date(Date.now() - 5 * 24 * 60 * 60 * 1000);
+			var defaultDate = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate();
+			document.getElementById("datetimepicker-dashboard").flatpickr({
+				inline: true,
+				prevArrow: "<span title=\"Previous month\">&laquo;</span>",
+				nextArrow: "<span title=\"Next month\">&raquo;</span>",
+				defaultDate: defaultDate
+			});
+		});
+
+		new Chart(document.getElementById("myChart"), {
+  type: 'line',
+  data: {
+    labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
+    datasets: [{ 
+        data: [86,114,106,106,107,111,133,221,783,2478],
+        label: "Africa",
+        borderColor: "#3e95cd",
+        fill: false
+      }, { 
+        data: [282,350,411,502,635,809,947,1402,3700,5267],
+        label: "Asia",
+        borderColor: "#8e5ea2",
+        fill: false
+      }, { 
+        data: [168,170,178,190,203,276,408,547,675,734],
+        label: "Europe",
+        borderColor: "#3cba9f",
+        fill: false
+      }, { 
+        data: [40,20,10,16,24,38,74,167,508,784],
+        label: "Latin America",
+        borderColor: "#e8c3b9",
+        fill: false
+      }, { 
+        data: [6,3,2,2,7,26,82,172,312,433],
+        label: "North America",
+        borderColor: "#c45850",
+        fill: false
+      }
+    ]
+  },
+  options: {
+    // title: {
+    //   display: true,
+    // //   text: 'World population per region (in millions)'
+    // },
+    maintainAspectRatio: false
+  }
+});
+const dateInput = document.getElementById('date');
+const dateInput1 = document.getElementById('date1');
+dateInput.value = formatDate();
+dateInput1.value = formatDate();
+function padTo2Digits(num) {
+  return num.toString().padStart(2, '0');
+}
+function formatDate(date = new Date()) {
+  return [
+    date.getFullYear(),
+    padTo2Digits(date.getMonth() + 1),
+    padTo2Digits(date.getDate()),
+  ].join('-');
+}
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Responsive &amp; Dashboard Template ">
+	<meta name="keywords" content="bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, front-end">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="shortcut icon" href="img/icons/owl_icon.png" />
+	<title>Maps | Smart OWl</title>
+	<link href="css/app.css" rel="stylesheet">
+	<link href="css/home.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="loading-bar.css"/>
+	<script type="text/javascript" src="loading-bar.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="main">
+			<nav class="navbar navbar-expand navbar-light navbar-bg">
+				<div class="container-fluid" style="margin-left: auto; ">
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<div id="myItem1"></div>
+	<script>
+	  /* construct manually */
+	  var bar1 = new ldBar("#myItem1");
+	  /* ldBar stored in the element */
+	  var bar2 = document.getElementById('myItem1').ldBar;
+	  bar1.set(60);
+	</script>
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+							<li class="nav-item mt-1">
+								<div class="d-flex flex-row">
+									<a href="home.html">
+										<img src="./logo_azul.png" class="ms-5" height="30px">
+									</a>
+								</div>
+							</li>
+							<li class="nav-item ms-6">
+								<a class="nav-link" href="#">Relatórios</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+									aria-expanded="false">Administrativo</a>
+								<ul class="dropdown-menu">
+									<li><h6 class="dropdown-header"><strong>Usuários</strong></h6></li>
+									<li><a class="dropdown-item" href="singup.html">Cadastro de Usuário</a></li>
+									<li><a class="dropdown-item" href="userSettings.html">Gerenciar Usuários</a></li>
+									<li>
+										<hr class="dropdown-divider">
+									</li>
+									<li><h6 class="dropdown-header"><strong>Empresas</strong></h6></li>
+									<li><a class="dropdown-item" href="singupCompanies.html">Cadastro de Empresa</a></li>
+									<li><a class="dropdown-item" href="companieSettings.html">Gerenciar Empresas</a></li>
+									<li><a class="dropdown-item" href="companies.html">Cadastro de Companhia</a></li>
+									<!-- <li>
+										<hr class="dropdown-divider">
+									</li>
+									<li><a class="dropdown-item" href="#">Something else here</a></li> -->
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="navbar-nav navbar-align">
+						<li class="nav-item dropdown">
+							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#"
+								data-bs-toggle="dropdown">
+								<i class="align-middle" data-feather="settings"></i>
+							</a>
+							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#"
+								data-bs-toggle="dropdown">
+								<i class="align-middle me-2" data-feather="user"></i>
+								<span class="text-dark">Usuario</span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-end">
+								<a class="dropdown-item" href="account.html"><i class="align-middle me-1"
+										data-feather="user"></i> Perfil</a>
+								<a class="dropdown-item" href="#"><i class="align-middle me-1"
+										data-feather="pie-chart"></i> Relatórios</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" id="sair" href="#">Sair</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<main class="content p-3 d-flex justify-content-between" style="background-color: #dfe9f0;">
+				<!-- MAPA -->
+				<div class="sidenav">
+					<div class="card-body d-flex text-center p-3">
+						<form class="d-flex" role="search">
+							<input class="form-control" type="search" placeholder="Localizar Sensores" aria-label="Localizar">		
+						  </form>
+					</div>
+					<nav id="navbar-example3" class="navbar navbar-light bg-light flex-column align-items-stretch p-3">
+						<span class="">Estruturas</span><br>
+						<nav class="nav nav-pills flex-column">
+						  <a class="nav-link" href="#item-1">Item 1</a>
+						  <nav class="nav nav-pills flex-column">
+							<a class="nav-link ms-3 my-1" href="#item-1-1">Item 1-1</a>
+							<a class="nav-link ms-3 my-1" href="#item-1-2">Item 1-2</a>
+						  </nav>
+						  <a class="nav-link" href="#item-2">Item 2</a>
+						  <a class="nav-link" href="#item-3">Item 3</a>
+						  <nav class="nav nav-pills flex-column">
+							<a class="nav-link ms-3 my-1" href="#item-3-1">Item 3-1</a>
+							<a class="nav-link ms-3 my-1" href="#item-3-2">Item 3-2</a>
+						  </nav>
+						</nav>
+					  </nav>
+				</div>
+				<div id="map" style="margin: 0 15px 0 15px"></div>
+				<div class="sidenavEsq">
+					<div class="card-body text-center p-3">
+						<span class="d-block pb-2" data-toggle="tooltip" title="Notificações" data-bs-toggle="offcanvas"
+							data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="border-bottom: 1px solid black;">
+							<svg xmlns="http://www.w3.org/2000/svg" width="25px" viewBox="0 0 24 24"
+								fill="currentColor">
+								<path d="M5.85 3.5a.75.75 0 00-1.117-1 9.719 9.719 0 00-2.348 4.876.75.75 0 001.479.248A8.219 8.219 0 015.85 3.5zM19.267 2.5a.75.75 0 10-1.118 1 8.22 8.22 0 011.987 4.124.75.75 0 001.48-.248A9.72 9.72 0 0019.266 2.5z" />
+								<path fill-rule="evenodd" d="M12 2.25A6.75 6.75 0 005.25 9v.75a8.217 8.217 0 01-2.119 5.52.75.75 0 00.298 1.206c1.544.57 3.16.99 4.831 1.243a3.75 3.75 0 107.48 0 24.583 24.583 0 004.83-1.244.75.75 0 00.298-1.205 8.217 8.217 0 01-2.118-5.52V9A6.75 6.75 0 0012 2.25zM9.75 18c0-.034 0-.067.002-.1a25.05 25.05 0 004.496 0l.002.1a2.25 2.25 0 11-4.5 0z" clip-rule="evenodd" />
+							</svg>
+						</span>
+					</div>
+					<div class="card-body text-center p-3">
+						<span class="d-block pb-2" data-toggle="tooltip" title="Oscilação de Tensão" data-bs-toggle="offcanvas"
+							data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+							<svg xmlns="http://www.w3.org/2000/svg" width="25px" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+								<path fill-rule="evenodd" d="M12 5.25c1.213 0 2.415.046 3.605.135a3.256 3.256 0 013.01 3.01c.044.583.077 1.17.1 1.759L17.03 8.47a.75.75 0 10-1.06 1.06l3 3a.75.75 0 001.06 0l3-3a.75.75 0 00-1.06-1.06l-1.752 1.751c-.023-.65-.06-1.296-.108-1.939a4.756 4.756 0 00-4.392-4.392 49.422 49.422 0 00-7.436 0A4.756 4.756 0 003.89 8.282c-.017.224-.033.447-.046.672a.75.75 0 101.497.092c.013-.217.028-.434.044-.651a3.256 3.256 0 013.01-3.01c1.19-.09 2.392-.135 3.605-.135zm-6.97 6.22a.75.75 0 00-1.06 0l-3 3a.75.75 0 101.06 1.06l1.752-1.751c.023.65.06 1.296.108 1.939a4.756 4.756 0 004.392 4.392 49.413 49.413 0 007.436 0 4.756 4.756 0 004.392-4.392c.017-.223.032-.447.046-.672a.75.75 0 00-1.497-.092c-.013.217-.028.434-.044.651a3.256 3.256 0 01-3.01 3.01 47.953 47.953 0 01-7.21 0 3.256 3.256 0 01-3.01-3.01 47.759 47.759 0 01-.1-1.759L6.97 15.53a.75.75 0 001.06-1.06l-3-3z" clip-rule="evenodd" />
+							</svg>
+						</span>
+					</div>
+					<div class="card-body text-center p-3">
+						<a><span class="d-block pb-2" data-toggle="tooltip" title="Direção da Corrente" data-bs-toggle="offcanvas"
+							data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+							<svg xmlns="http://www.w3.org/2000/svg" width="25px" viewBox="0 0 22 22" fill="currentColor" class="w-6 h-6">
+								<path fill-rule="evenodd" d="M15.97 2.47a.75.75 0 011.06 0l4.5 4.5a.75.75 0 010 1.06l-4.5 4.5a.75.75 0 11-1.06-1.06l3.22-3.22H7.5a.75.75 0 010-1.5h11.69l-3.22-3.22a.75.75 0 010-1.06zm-7.94 9a.75.75 0 010 1.06l-3.22 3.22H16.5a.75.75 0 010 1.5H4.81l3.22 3.22a.75.75 0 11-1.06 1.06l-4.5-4.5a.75.75 0 010-1.06l4.5-4.5a.75.75 0 011.06 0z" clip-rule="evenodd" />
+							</svg>
+						</span>
+					</a>
+					</div>
+					<div class="card-body text-center p-3">
+					<a><span class="d-block pb-2" data-toggle="tooltip" title="Falta de Comunicação" data-bs-toggle="offcanvas"
+							data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+							<svg xmlns="http://www.w3.org/2000/svg" width="25px" viewBox="0 0 22 22" fill="currentColor" class="w-6 h-6">
+								<path d="M3.53 2.47a.75.75 0 00-1.06 1.06l18 18a.75.75 0 101.06-1.06l-18-18zM20.25 5.507v11.561L5.853 2.671c.15-.043.306-.075.467-.094a49.255 49.255 0 0111.36 0c1.497.174 2.57 1.46 2.57 2.93zM3.75 21V6.932l14.063 14.063L12 18.088l-7.165 3.583A.75.75 0 013.75 21z" />
+							</svg>
+						</span>
+					</a>
+					</div>
+					<div class="card-body text-center p-3">
+					<a>
+					<span class="d-block pb-2" data-toggle="tooltip" title="Curto Permanente" data-bs-toggle="offcanvas"
+							data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+							<svg xmlns="http://www.w3.org/2000/svg" width="25px" viewBox="0 0 22 22" fill="currentColor"
+								id="alarme_permanente" class="w-6 h-6">
+								<path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm3 10.5a.75.75 0 000-1.5H9a.75.75 0 000 1.5h6z" clip-rule="evenodd" />
+							</svg>
+						</span>
+					</a>
+					</div>
+					<div class="card-body text-center p-3">
+						<span class="d-block pb-2" data-toggle="tooltip" title="Curto Transitório" data-bs-toggle="offcanvas"
+							data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+							<svg xmlns="http://www.w3.org/2000/svg" width="25px" viewBox="0 0 22 22" id="alarme_transitorio" class="w-6 h-6" fill="currentColor">
+								<path d="M11.622 1.602a.75.75 0 01.756 0l2.25 1.313a.75.75 0 01-.756 1.295L12 3.118 10.128 4.21a.75.75 0 11-.756-1.295l2.25-1.313zM5.898 5.81a.75.75 0 01-.27 1.025l-1.14.665 1.14.665a.75.75 0 11-.756 1.295L3.75 8.806v.944a.75.75 0 01-1.5 0V7.5a.75.75 0 01.372-.648l2.25-1.312a.75.75 0 011.026.27zm12.204 0a.75.75 0 011.026-.27l2.25 1.312a.75.75 0 01.372.648v2.25a.75.75 0 01-1.5 0v-.944l-1.122.654a.75.75 0 11-.756-1.295l1.14-.665-1.14-.665a.75.75 0 01-.27-1.025zm-9 5.25a.75.75 0 011.026-.27L12 11.882l1.872-1.092a.75.75 0 11.756 1.295l-1.878 1.096V15a.75.75 0 01-1.5 0v-1.82l-1.878-1.095a.75.75 0 01-.27-1.025zM3 13.5a.75.75 0 01.75.75v1.82l1.878 1.095a.75.75 0 11-.756 1.295l-2.25-1.312a.75.75 0 01-.372-.648v-2.25A.75.75 0 013 13.5zm18 0a.75.75 0 01.75.75v2.25a.75.75 0 01-.372.648l-2.25 1.312a.75.75 0 11-.756-1.295l1.878-1.096V14.25a.75.75 0 01.75-.75zm-9 5.25a.75.75 0 01.75.75v.944l1.122-.654a.75.75 0 11.756 1.295l-2.25 1.313a.75.75 0 01-.756 0l-2.25-1.313a.75.75 0 11.756-1.295l1.122.654V19.5a.75.75 0 01.75-.75z" />
+							</svg>
+						</span>
+					</div>
+					<div class="card-body text-center p-3">
+						<span class="d-block pb-2" data-toggle="tooltip" title="Falta de Corrente" data-bs-toggle="offcanvas"
+							data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+							<svg xmlns="http://www.w3.org/2000/svg" width="25px" viewBox="0 0 22 22" id="alarme_corrente" fill="currentColor" class="w-6 h-6">
+								<path d="M20.798 11.012l-3.188 3.416L9.462 6.28l4.24-4.542a.75.75 0 011.272.71L12.982 9.75h7.268a.75.75 0 01.548 1.262zM3.202 12.988L6.39 9.572l8.148 8.148-4.24 4.542a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262zM3.53 2.47a.75.75 0 00-1.06 1.06l18 18a.75.75 0 101.06-1.06l-18-18z" />
+							</svg>
+						</span>
+					</div>
+					<div class="card-body text-center p-3">
+						<span class="d-block pb-2" data-toggle="tooltip" title="Falta de Fase" data-bs-toggle="offcanvas"
+							data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+							<svg xmlns="http://www.w3.org/2000/svg" width="25px" viewBox="0 0 22 22" id="alarme_fase" fill="currentColor" class="w-6 h-6">
+								<path fill-rule="evenodd" d="M1.72 5.47a.75.75 0 011.06 0L9 11.69l3.756-3.756a.75.75 0 01.985-.066 12.698 12.698 0 014.575 6.832l.308 1.149 2.277-3.943a.75.75 0 111.299.75l-3.182 5.51a.75.75 0 01-1.025.275l-5.511-3.181a.75.75 0 01.75-1.3l3.943 2.277-.308-1.149a11.194 11.194 0 00-3.528-5.617l-3.809 3.81a.75.75 0 01-1.06 0L1.72 6.53a.75.75 0 010-1.061z" clip-rule="evenodd" />
+							</svg>
+						</span>
+					</div>
+					<div class="card-body text-center p-3">
+					<a><span id="bateriaSidebar" class="d-block pb-2" data-toggle="tooltip" title="Chave Aberta" data-bs-toggle="offcanvas"
+							data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" >
+							<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="25px"viewBox="0 0 512 512" id="alarme_chave">
+								<path
+								  d="M63.8 409.3l60.5-59c32.1 42.8 71.1 66 126.6 67.4 30.5.7 60.3-7 86.4-22.4 5.1 5.3 18.5 19.5 20.9 22-32.2 20.7-69.6 31.1-108.1 30.2-43.3-1.1-84.6-16.7-117.7-44.4.3-.6-38.2 37.5-38.6 37.9 9.5 29.8-13.1 62.4-46.3 62.4C20.7 503.3 0 481.7 0 454.9c0-34.3 33.1-56.6 63.8-45.6zm354.9-252.4c19.1 31.3 29.6 67.4 28.7 104-1.1 44.8-19 87.5-48.6 121 .3.3 23.8 25.2 24.1 25.5 9.6-1.3 19.2 2 25.9 9.1 11.3 12 10.9 30.9-1.1 42.4-12 11.3-30.9 10.9-42.4-1.1-6.7-7-9.4-16.8-7.6-26.3-24.9-26.6-44.4-47.2-44.4-47.2 42.7-34.1 63.3-79.6 64.4-124.2.7-28.9-7.2-57.2-21.1-82.2l22.1-21zM104 53.1c6.7 7 9.4 16.8 7.6 26.3l45.9 48.1c-4.7 3.8-13.3 10.4-22.8 21.3-25.4 28.5-39.6 64.8-40.7 102.9-.7 28.9 6.1 57.2 20 82.4l-22 21.5C72.7 324 63.1 287.9 64.2 250.9c1-44.6 18.3-87.6 47.5-121.1l-25.3-26.4c-9.6 1.3-19.2-2-25.9-9.1-11.3-12-10.9-30.9 1.1-42.4C73.5 40.7 92.2 41 104 53.1zM464.9 8c26 0 47.1 22.4 47.1 48.3S490.9 104 464.9 104c-6.3.1-14-1.1-15.9-1.8l-62.9 59.7c-32.7-43.6-76.7-65.9-126.9-67.2-30.5-.7-60.3 6.8-86.2 22.4l-21.1-22C184.1 74.3 221.5 64 260 64.9c43.3 1.1 84.6 16.7 117.7 44.6l41.1-38.6c-1.5-4.7-2.2-9.6-2.2-14.5C416.5 29.7 438.9 8 464.9 8zM256.7 113.4c5.5 0 10.9.4 16.4 1.1 78.1 9.8 133.4 81.1 123.8 159.1-9.8 78.1-81.1 133.4-159.1 123.8-78.1-9.8-133.4-81.1-123.8-159.2 9.3-72.4 70.1-124.6 142.7-124.8zm-59 119.4c.6 22.7 12.2 41.8 32.4 52.2l-11 51.7h73.7l-11-51.7c20.1-10.9 32.1-29 32.4-52.2-.4-32.8-25.8-57.5-58.3-58.3-32.1.8-57.3 24.8-58.2 58.3zM256 160" />
+							  </svg>
+						</span>
+					</a>
+					</div>
+					<div class="card-body text-center p-3">
+						<a>
+							<span id="bateriaSidebar" class="d-block pb-2" data-toggle="tooltip" title="Chave Manipulada" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+								<svg xmlns="http://www.w3.org/2000/svg" width="20" id="mani" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16">
+              						<path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708ZM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11Z" />
+            					</svg>
+							</span>
+						</a>
+					</div>
+					<div class="card-body text-center p-3">
+						<a>
+							<span id="bateriaSidebar" class="d-block pb-2" data-toggle="tooltip" title="Bateria" data-bs-toggle="offcanvas"data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+								<svg xmlns="http://www.w3.org/2000/svg" width="25px" viewBox="0 0 22 22" id="alarme_bateria" fill="red" class="w-6 h-6">
+									<path d="M4.5 9.75a.75.75 0 00-.75.75V15c0 .414.336.75.75.75h6.75A.75.75 0 0012 15v-4.5a.75.75 0 00-.75-.75H4.5z" />
+									<path fill-rule="evenodd" d="M3.75 6.75a3 3 0 00-3 3v6a3 3 0 003 3h15a3 3 0 003-3v-.037c.856-.174 1.5-.93 1.5-1.838v-2.25c0-.907-.644-1.664-1.5-1.837V9.75a3 3 0 00-3-3h-15zm15 1.5a1.5 1.5 0 011.5 1.5v6a1.5 1.5 0 01-1.5 1.5h-15a1.5 1.5 0 01-1.5-1.5v-6a1.5 1.5 0 011.5-1.5h15z" clip-rule="evenodd" />
+								</svg>
+							</span>
+						</a>
+					</div>
+				</div>
+				<div class="offcanvas offcanvas-end text-bg-light.bg-gradient" tabindex="-1" id="Fase" aria-labelledby="FaseLabel">
+					<div class="offcanvas-header">
+					  <h5 class="offcanvas-title text-dark" id="FaseLabel" style="display: flex;">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="alarme_fase" fill="red" class="w-6 h-6"
+						  style="margin-right:10px;">
+						  <path
+							d="M4.5 9.75a.75.75 0 00-.75.75V15c0 .414.336.75.75.75h6.75A.75.75 0 0012 15v-4.5a.75.75 0 00-.75-.75H4.5z" />
+						  <path fill-rule="evenodd"
+							d="M3.75 6.75a3 3 0 00-3 3v6a3 3 0 003 3h15a3 3 0 003-3v-.037c.856-.174 1.5-.93 1.5-1.838v-2.25c0-.907-.644-1.664-1.5-1.837V9.75a3 3 0 00-3-3h-15zm15 1.5a1.5 1.5 0 011.5 1.5v6a1.5 1.5 0 01-1.5 1.5h-15a1.5 1.5 0 01-1.5-1.5v-6a1.5 1.5 0 011.5-1.5h15z"
+							clip-rule="evenodd" />
+						</svg>
+						Falta de Fase
+					  </h5>
+					  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+					</div>
+					<div class="offcanvas-body example" id="faseSideBar"></div>
+				  </div>
+				  <div class="offcanvas offcanvas-end text-bg-light.bg-gradient" tabindex="-1" id="Corrente"
+					aria-labelledby="CorrenteLabel">
+					<div class="offcanvas-header">
+					  <h5 class="offcanvas-title text-dark" id="CorrenteLabel" style="display: flex;">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="alarme_corrente" fill="red" class="w-6 h-6"
+						  style="margin-right:10px;">
+						  <path
+							d="M4.5 9.75a.75.75 0 00-.75.75V15c0 .414.336.75.75.75h6.75A.75.75 0 0012 15v-4.5a.75.75 0 00-.75-.75H4.5z" />
+						  <path fill-rule="evenodd"
+							d="M3.75 6.75a3 3 0 00-3 3v6a3 3 0 003 3h15a3 3 0 003-3v-.037c.856-.174 1.5-.93 1.5-1.838v-2.25c0-.907-.644-1.664-1.5-1.837V9.75a3 3 0 00-3-3h-15zm15 1.5a1.5 1.5 0 011.5 1.5v6a1.5 1.5 0 01-1.5 1.5h-15a1.5 1.5 0 01-1.5-1.5v-6a1.5 1.5 0 011.5-1.5h15z"
+							clip-rule="evenodd" />
+						</svg>
+						Falta de Corrente
+					  </h5>
+					  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+					</div>
+					<div class="offcanvas-body example" id="correnteSideBar"></div>
+				  </div>
+				  <div class="offcanvas offcanvas-end text-bg-light.bg-gradient" tabindex="-1" id="Permanente"
+					aria-labelledby="PermanenteLabel">
+					<div class="offcanvas-header">
+					  <h5 class="offcanvas-title text-dark" id="PermanenteLabel" style="display: flex;">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="alarme_permanente" fill="red" class="w-6 h-6"
+						  style="margin-right:10px;">
+						  <path
+							d="M4.5 9.75a.75.75 0 00-.75.75V15c0 .414.336.75.75.75h6.75A.75.75 0 0012 15v-4.5a.75.75 0 00-.75-.75H4.5z" />
+						  <path fill-rule="evenodd"
+							d="M3.75 6.75a3 3 0 00-3 3v6a3 3 0 003 3h15a3 3 0 003-3v-.037c.856-.174 1.5-.93 1.5-1.838v-2.25c0-.907-.644-1.664-1.5-1.837V9.75a3 3 0 00-3-3h-15zm15 1.5a1.5 1.5 0 011.5 1.5v6a1.5 1.5 0 01-1.5 1.5h-15a1.5 1.5 0 01-1.5-1.5v-6a1.5 1.5 0 011.5-1.5h15z"
+							clip-rule="evenodd" />
+						</svg>
+						Curto Permanente
+					  </h5>
+					  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+					</div>
+					<div class="offcanvas-body example" id="permanenteSideBar"></div>
+				  </div>
+				  <div class="offcanvas offcanvas-end text-bg-light.bg-gradient" tabindex="-1" id="Transitorio"
+					aria-labelledby="TransitorioLabel">
+					<div class="offcanvas-header">
+					  <h5 class="offcanvas-title text-dark" id="TransitorioLabel" style="display: flex;">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="alarme_transitorio" fill="red" class="w-6 h-6"
+						  style="margin-right:10px;">
+						  <path
+							d="M4.5 9.75a.75.75 0 00-.75.75V15c0 .414.336.75.75.75h6.75A.75.75 0 0012 15v-4.5a.75.75 0 00-.75-.75H4.5z" />
+						  <path fill-rule="evenodd"
+							d="M3.75 6.75a3 3 0 00-3 3v6a3 3 0 003 3h15a3 3 0 003-3v-.037c.856-.174 1.5-.93 1.5-1.838v-2.25c0-.907-.644-1.664-1.5-1.837V9.75a3 3 0 00-3-3h-15zm15 1.5a1.5 1.5 0 011.5 1.5v6a1.5 1.5 0 01-1.5 1.5h-15a1.5 1.5 0 01-1.5-1.5v-6a1.5 1.5 0 011.5-1.5h15z"
+							clip-rule="evenodd" />
+						</svg>
+						Curto Transitório
+					  </h5>
+					  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+					</div>
+					<div class="offcanvas-body example" id="transitorioSideBar"></div>
+				  </div>
+				  <div class="offcanvas offcanvas-end text-bg-light.bg-gradient" tabindex="-1" id="Bateria"
+				  aria-labelledby="BateriaLabel">
+				  <div class="offcanvas-header">
+					<h5 class="offcanvas-title text-dark" id="BateriaLabel" style="display: flex;">
+					  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" id="alarme_bateria" fill="red" class="w-6 h-6"
+						style="margin-right:10px;">
+						<path
+						  d="M4.5 9.75a.75.75 0 00-.75.75V15c0 .414.336.75.75.75h6.75A.75.75 0 0012 15v-4.5a.75.75 0 00-.75-.75H4.5z" />
+						<path fill-rule="evenodd"
+						  d="M3.75 6.75a3 3 0 00-3 3v6a3 3 0 003 3h15a3 3 0 003-3v-.037c.856-.174 1.5-.93 1.5-1.838v-2.25c0-.907-.644-1.664-1.5-1.837V9.75a3 3 0 00-3-3h-15zm15 1.5a1.5 1.5 0 011.5 1.5v6a1.5 1.5 0 01-1.5 1.5h-15a1.5 1.5 0 01-1.5-1.5v-6a1.5 1.5 0 011.5-1.5h15z"
+						  clip-rule="evenodd" />
+					  </svg>
+					  Bateria
+					</h5>
+					<button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+				  </div>
+				  <div class="offcanvas-body example" id="bateriaSideBar"></div>
+				</div>
+				<div class="offcanvas offcanvas-end text-bg-light.bg-gradient" tabindex="-1" id="Fase"
+					aria-labelledby="FaseLabel">
+					<div class="offcanvas-header">
+						<h5 class="offcanvas-title text-dark ml-2" id="FaseLabel" style="display: flex;">Chave Aberta
+						</h5>
+						<button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+							aria-label="Close"></button>
+					</div>
+					<div class="offcanvas-body example" id="chaveSideBar"></div>
+				</div>
+				<div class="offcanvas offcanvas-end text-bg-light.bg-gradient" tabindex="-1" id="Corrente"
+					aria-labelledby="CorrenteLabel">
+					<div class="offcanvas-header">
+						<h5 class="offcanvas-title text-dark" id="CorrenteLabel" style="display: flex;">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="alarme_corrente" fill="red"
+								class="w-6 h-6" style="margin-right:10px;">
+								<path
+									d="M4.5 9.75a.75.75 0 00-.75.75V15c0 .414.336.75.75.75h6.75A.75.75 0 0012 15v-4.5a.75.75 0 00-.75-.75H4.5z" />
+								<path fill-rule="evenodd"
+									d="M3.75 6.75a3 3 0 00-3 3v6a3 3 0 003 3h15a3 3 0 003-3v-.037c.856-.174 1.5-.93 1.5-1.838v-2.25c0-.907-.644-1.664-1.5-1.837V9.75a3 3 0 00-3-3h-15zm15 1.5a1.5 1.5 0 011.5 1.5v6a1.5 1.5 0 01-1.5 1.5h-15a1.5 1.5 0 01-1.5-1.5v-6a1.5 1.5 0 011.5-1.5h15z"
+									clip-rule="evenodd" />
+							</svg>
+							Chave em Manipulação
+						</h5>
+						<button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+							aria-label="Close"></button>
+					</div>
+					<div class="offcanvas-body example" id="maniSideBar"></div>
+				</div>
+			</main>
+			<!-- FOOTER -->
+			<footer class="footer">
+				<div class="container-fluid">
+					<div class="row text-muted">
+						<div class="col-6 text-start">
+							<p class="mb-0">
+								<small class="level-item is-size-7 has-text-weight-bold"
+									style="color: var(--textLight)">
+									&copy; <strong>Nastek Industria e Tecnologia.</strong> All Rights Reserved.
+								</small>
+							</p>
+						</div>
+						<div class="col-6 text-end">
+							<ul class="list-inline">
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Support</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Help Center</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!-- FOOTER -->
+		</div>
+	</div>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTCFKDaDJbda8Pq8tlKbD_C_xED88oMg8"></script>
+	<script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.1/xlsx.full.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/home.js"></script>
+</body>
+</html>

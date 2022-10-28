@@ -1,0 +1,32 @@
+
+	.sidenav {
+		width: 14.5rem;
+		height: 53.5rem;
+		background-color: white;
+		border-radius: 15px;
+	}
+	
+	.sidenavEsq {
+		width: 4.5rem;
+		height: 53.5rem;
+		background-color: white;
+		border-radius: 15px;
+	}
+
+	#map {
+		overflow: hidden;
+		border-radius: 15px;
+		width: 82%;
+		height: 53.5rem;
+		-moz-border-radius: 15px;
+		-webkit-mask-border-radius: 15px;
+		-webkit-border-radius: 15px;
+	}
+
+	.example::-webkit-scrollbar {
+		display: none;
+	  }
+	  .example {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	  }
